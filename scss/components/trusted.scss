@@ -1,0 +1,78 @@
+.trusted {
+	z-index: -1;
+	background-color: $grey-light;
+	display: grid;
+
+	grid-template-columns: minmax(auto, 1200px);
+	margin-bottom: 10vw;
+	position: relative;
+	justify-content: center;
+	padding: 240px 40px;
+	gap: 64px;
+	overflow: hidden;
+
+	@include large {
+		padding: calcToVw(240) 80px;
+		grid-template-columns: minmax(auto, calcToVw(1570));
+		gap: calcToVw(64);
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		width: 600px;
+		height: 300px;
+		transform-origin: top;
+		background-color: $white;
+		transform: skew(-$skew);
+
+		@include large {
+			width: calcToVw(300);
+			height: calcToVw(150);
+		}
+	}
+	&:before {
+		transform-origin: top;
+		bottom: 100%;
+		z-index: 1;
+		margin-bottom: -100px;
+		left: 0;
+
+		@include large {
+			margin-bottom: calcToVw(-100);
+			// left: calcToVw(100);
+		}
+	}
+
+	&:after {
+		right: 0;
+		top: 100%;
+		margin-top: -100px;
+		transform-origin: bottom;
+
+		@include large {
+			margin-top: calcToVw(-100);
+		}
+	}
+
+	&__company {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		justify-content: center;
+		grid-template-columns: repeat(auto-fit, minmax(auto, 160px));
+		gap: calcToVw(32);
+
+		// @include large {}
+
+		& img {
+			// height: 100%;
+
+			@include large {
+				height: auto;
+				width: 100%;
+			}
+		}
+	}
+}

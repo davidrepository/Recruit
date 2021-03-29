@@ -1,0 +1,58 @@
+@import '../system.scss';
+
+.about-us {
+	@extend .custom;
+	grid-template-columns: minmax(auto, 920px);
+	padding: 200px 180px;
+	margin-bottom: 8vw;
+	gap: calcToVw(120);
+
+	@include small {
+		grid-template-columns: minmax(auto, 400px);
+		padding: calcToVw(400) 60px;
+	}
+
+	@include large {
+		grid-template-columns: minmax(auto, calcToVw(920));
+		padding: calcToVw(200) 0;
+	}
+
+	&__info {
+		gap: calcToVw(64);
+	}
+
+	&__dots {
+		gap: calcToVw(16);
+
+		@include small {
+			justify-content: center !important;
+		}
+	}
+
+	&__dot {
+		@extend .skewed;
+
+		height: 20px;
+		width: 20px;
+		border: 1px solid $black;
+		box-sizing: border-box;
+
+		@include large {
+			width: calcToVw(20);
+			height: calcToVw(20);
+		}
+
+		&-active {
+			background-color: $black;
+			border: none;
+		}
+	}
+
+	& > img {
+		// display: none;
+		position: absolute;
+		height: 32vw;
+		top: 32px;
+		left: 0;
+	}
+}

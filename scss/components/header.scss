@@ -1,0 +1,103 @@
+.header {
+	grid-template-columns: minmax(auto, 1400px);
+	width: 100%;
+	display: grid;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	height: $header-height;
+	justify-content: center;
+	align-content: center;
+	transition: background-color 0.2s, height 0.2s;
+	padding: 0 48px;
+
+	&.active {
+		background-color: rgba(0, 0, 0, 0.8);
+		height: 100px;
+	}
+
+	@include large {
+		height: calcToVw(120);
+		grid-template-columns: minmax(auto, 1fr);
+	}
+
+	&__container {
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		@include large {
+			height: calcToVw(54);
+		}
+	}
+
+	&__hamburger {
+		display: none;
+		width: 32px;
+
+		@include small {
+			display: block;
+		}
+	}
+
+	&__menu {
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		justify-content: start;
+
+		li:last-of-type &-link {
+			border-right: none;
+		}
+
+		@include small {
+			display: none;
+		}
+
+		&-link {
+			display: block;
+			height: 18px;
+			line-height: 18px;
+			transform: skew(-$skew);
+			padding: 0 32px;
+			font-size: 14px;
+			color: $white;
+			border-right: 1px solid $black;
+
+			&:hover {
+				background-color: $black;
+				color: $white;
+			}
+
+			@include large {
+				line-height: calcToVw(18);
+				height: calcToVw(18);
+				padding: 0 calcToVw(32);
+				font-size: calcToVw(14);
+				border-width: calcToVw(1);
+			}
+
+			&--active {
+				height: 28px;
+				line-height: 28px;
+				border: 1px solid $black;
+
+				@include large {
+					height: calcToVw(28);
+					line-height: calcToVw(28);
+					border-width: calcToVw(1);
+				}
+			}
+
+			// Childrens
+			& span {
+				display: block;
+				transform: skew($skew);
+			}
+		}
+	}
+}

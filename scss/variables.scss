@@ -1,0 +1,17 @@
+$skew: 22deg;
+$gridColumns: 2, 3, 4, 6, 12, 16;
+$gridGap: '4px', '8px', '12px', '16px', '24px', '32px', '44px', '64px', '128px';
+$gridRows: $gridColumns;
+$gridPositions: 'start', 'center', 'space-between', 'end';
+$flows: 'column', 'row';
+
+$white: #fff;
+$grey-light: #f4f4f4;
+$grey-dark: #8b8b8b;
+$black: #000;
+
+$header-height: 120px;
+$header-padding: 48px;
+
+$lg: 1440px;
+$sm: 1024px;

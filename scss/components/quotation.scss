@@ -1,0 +1,134 @@
+.quotation {
+	padding-top: 20vw;
+	padding-bottom: 10vw;
+	position: relative;
+
+	@include small {
+		padding-top: 40vw;
+		padding-bottom: 20vw;
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		background-color: $grey-dark;
+		width: 2px;
+		height: 300px;
+		transform: skew(-$skew);
+		z-index: 10;
+
+		@include large {
+			height: calcToVw(300);
+		}
+	}
+
+	&:before {
+		left: 24vw;
+		bottom: -200px;
+		transform-origin: bottom;
+	}
+
+	&:after {
+		top: 0;
+		right: 0;
+		background-color: $grey-dark;
+	}
+
+	&__container {
+		transform: skew(-$skew);
+		background-color: $black;
+		// padding: 80px 60px;
+		width: 80%;
+		transform-origin: top;
+		padding: calcToVw(100) calcToVw(120);
+
+		@include large {
+		}
+
+		@include small {
+			width: 95%;
+			padding: calcToVw(200) calcToVw(160);
+		}
+
+		& > .grid {
+			gap: calcToVw(120);
+			padding: 0 calcToVw(60);
+			transform-origin: top;
+
+			@include small {
+				grid-auto-flow: inherit;
+			}
+
+			@include large {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		& > * {
+			transform: skew($skew);
+			color: $white;
+		}
+
+		& h2 {
+			color: $white;
+		}
+	}
+
+	&__quot {
+		gap: calcToVw(64);
+
+		@include small {
+			justify-items: center !important;
+		}
+
+		&-para {
+			position: relative;
+
+			// Quotation symbols
+			&:before,
+			&:after {
+				position: absolute;
+				color: $grey-dark;
+
+				font-weight: 700;
+				z-index: 10;
+				font-size: 32px;
+
+				@include large {
+					font-size: calcToVw(32);
+				}
+			}
+
+			&:before {
+				content: '“';
+				top: 0;
+				left: 0;
+				margin-top: -20px;
+				margin-left: -32px;
+
+				@include large {
+					margin-top: calcToVw(-20);
+					margin-left: calcToVw(-32);
+				}
+			}
+
+			&:after {
+				content: '”';
+				right: 0;
+				bottom: 0;
+				margin-right: -24px;
+				margin-bottom: -12px;
+
+				@include large {
+					margin-right: calcToVw(-24);
+					margin-bottom: calcToVw(-12);
+				}
+
+				@include small {
+					margin-right: calcToVw(-4);
+				}
+			}
+		}
+	}
+}

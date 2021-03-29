@@ -1,0 +1,283 @@
+@mixin large {
+	@media (min-width: #{$lg}) {
+		@content;
+	}
+}
+
+@mixin small {
+	@media (max-width: #{$sm}) {
+		@content;
+	}
+}
+
+@function get-vw($target, $breakpoint) {
+	$vw-context: ($breakpoint * 0.01) * 1px;
+	// @debug ($target / $vw-context);
+	@return ($target / $vw-context) * 1vw;
+}
+
+@function calcToVw($px) {
+	@return $px * 0.06vw;
+}
+
+@each $column in $gridColumns {
+	.grid[columns='#{$column}'] {
+		grid-template-columns: repeat($column, 1fr);
+	}
+}
+
+@each $gap in $gridGap {
+	.grid[gap='#{$gap}'] {
+		gap: #{$gap};
+	}
+}
+
+@each $row in $gridRows {
+	.grid[rows='#{$row}'] {
+		grid-template-rows: repeat($row, 1fr);
+	}
+}
+
+@each $flow in $flows {
+	.grid[flow='#{$flow}'] {
+		grid-auto-flow: #{$flow};
+	}
+}
+
+@each $position in $gridPositions {
+	.grid__item[selfx='#{$position}'] {
+		justify-self: #{$position};
+	}
+
+	.grid__item[selfy='#{$position}'] {
+		align-self: #{$position};
+	}
+
+	.grid[contentx='#{$position}'] {
+		justify-content: #{$position};
+	}
+
+	.grid[contenty='#{$position}'] {
+		align-content: #{$position};
+	}
+
+	.grid[itemsx='#{$position}'] {
+		justify-items: #{$position};
+	}
+
+	.grid[itemsy='#{$position}'] {
+		align-items: #{$position};
+	}
+
+	.para[text='#{$position}'] {
+		text-align: #{$position};
+	}
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 56px;
+
+	@include small {
+		font-size: calcToVw(56 * 3);
+	}
+
+	@include large {
+		font-size: calcToVw(56);
+	}
+}
+
+h2 {
+	font-size: 32px;
+	font-weight: 700;
+
+	@include small {
+		font-size: calcToVw(32 * 3);
+	}
+
+	@include large {
+		font-size: calcToVw(32);
+	}
+}
+
+h3 {
+	font-size: 18px;
+	line-height: 21px;
+	font-weight: 700;
+
+	@include small {
+		font-size: calcToVw(18 * 4);
+		line-height: calcToVw(21 * 4);
+	}
+
+	@include large {
+		font-size: calcToVw(18);
+		line-height: calcToVw(21);
+	}
+}
+
+.para {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+
+	@include small {
+		font-size: calcToVw(14 * 4);
+		line-height: calcToVw(21 * 4);
+	}
+
+	@include large {
+		font-size: calcToVw(14 * 1.5);
+		line-height: calcToVw(21 * 1.5);
+	}
+}
+
+.grid {
+	display: grid;
+}
+
+.skewed {
+	transform: skew(-$skew);
+}
+
+.button {
+	background-color: rgb(218, 204, 204);
+	display: grid;
+	align-content: center;
+	font-size: 16px;
+	font-weight: 600;
+
+	transform: skew(-$skew);
+
+	&.origin {
+		transform-origin: bottom;
+	}
+
+	&.md {
+		height: 40px;
+		padding: 0 32px;
+
+		@include large {
+			height: calcToVw(40);
+			padding: 0 calcToVw(32);
+		}
+	}
+
+	&.lg {
+		height: 48px;
+		font-size: 16px;
+		padding: 0 40px;
+
+		@include large {
+			padding: 0 calcToVw(40);
+			height: calcToVw(48);
+		}
+	}
+
+	& > * {
+		display: block;
+		transform: skew($skew);
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 600;
+
+		@include large {
+			font-size: calcToVw(16);
+		}
+	}
+
+	&.primary {
+		background-color: $white;
+		color: $black;
+	}
+
+	&.secondary {
+		color: $white;
+		background-color: #8b8b8b;
+	}
+
+	&.ghost {
+		border: 1px solid #8b8b8b;
+		color: #8b8b8b;
+		background-color: transparent;
+
+		@include large {
+			border: calcToVw(1) solid #8b8b8b;
+		}
+	}
+}
+
+.section {
+	&__heading {
+		@extend .grid;
+
+		gap: calcToVw(32);
+
+		@include small {
+			gap: calcToVw(64);
+		}
+
+		&-text {
+			@extend .grid;
+			gap: 2px;
+			text-align: center;
+
+			@include large {
+				gap: calcToVw(2);
+			}
+
+			& h1 {
+				white-space: nowrap;
+			}
+		}
+
+		& span {
+			text-transform: uppercase;
+			font-size: calcToVw(15);
+			font-weight: 400;
+			white-space: nowrap;
+
+			@include small {
+				font-size: calcToVw(15 * 4);
+			}
+		}
+
+		&-line {
+			width: 86px;
+			height: 4px;
+			background-color: #8b8b8b;
+
+			@include small {
+				width: calcToVw(86 * 2);
+				height: calcToVw(4 * 2);
+			}
+		}
+	}
+
+	&__description {
+		@extend .grid;
+		gap: calcToVw(44);
+
+		@include small {
+			gap: calcToVw(44 * 2);
+		}
+
+		& > p {
+			width: 600px;
+
+			@include large {
+				width: auto;
+			}
+
+			@include small {
+				width: auto;
+			}
+		}
+	}
+}
+
+.custom {
+	display: grid;
+	position: relative;
+	justify-content: center;
+}

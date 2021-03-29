@@ -1,0 +1,100 @@
+@import './variables.scss';
+@import './system.scss';
+@import './reset.scss';
+
+@import './components/header.scss';
+@import './components/hero.scss';
+@import './components/about-us.scss';
+@import './components/portfolio.scss';
+@import './components/quotation.scss';
+@import './components/latest-news.scss';
+@import './components/trusted.scss';
+
+body {
+	.sidebar {
+		z-index: -1;
+		visibility: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		transform: translateX(100%);
+
+		background-color: rgba(0, 0, 0, 0.6);
+
+		transition: background-color 0.2s, transform 0.2s;
+	}
+
+	&.sidebar-in {
+		overflow: hidden;
+
+		.sidebar {
+			z-index: 2;
+			visibility: visible;
+			transform: translateX(0);
+		}
+	}
+
+	&.sidebar-out {
+		.sidebar {
+			z-index: 2;
+			visibility: visible;
+			transform: translateX(100%);
+		}
+	}
+}
+
+.main {
+	z-index: 1;
+	min-height: 100%;
+	display: grid;
+	position: relative;
+	overflow: hidden;
+
+	.grid__background {
+		z-index: -1;
+		position: absolute;
+		top: 100vh;
+		width: 240vw;
+		height: 100%;
+		left: 0;
+		transform: skew(-22deg);
+		transform-origin: top;
+		padding-left: 96px;
+
+		& > * {
+			border-right: 1px solid $grey-light;
+
+			&:first-of-type {
+				border-left: 1px solid $grey-light;
+			}
+		}
+
+		& .block1 {
+			height: 240px;
+			background-color: $grey-light;
+			margin-top: 192px;
+
+			@include large {
+				height: calcToVw(240);
+			}
+		}
+
+		& .block2 {
+			height: 420px;
+			margin-left: -150px;
+			width: calc(100% + 150px);
+			margin-top: 2680px;
+			background-color: $grey-light;
+
+			@include large {
+				height: calcToVw(420);
+			}
+		}
+	}
+
+	& > * {
+		z-index: 2;
+	}
+}
