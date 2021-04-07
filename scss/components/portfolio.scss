@@ -2,11 +2,15 @@
 	display: grid;
 	position: relative;
 	justify-content: start;
-	padding: 60px 200px;
+	padding: 60px 160px;
 
 	@include small {
 		padding: 30px;
 		gap: 64px;
+	}
+
+	@include large {
+		padding: 60px 200px;
 	}
 
 	background-color: $grey-light;
@@ -100,7 +104,7 @@
 		// right: 0;
 		// width: 50%;
 		height: calc(100% + 15vw);
-		margin-right: -150px;
+		margin-right: -200px;
 		margin-top: -5vw;
 		z-index: 1;
 		overflow: hidden;
