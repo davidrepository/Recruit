@@ -35,6 +35,12 @@
 					font-weight: 400;
 				}
 			}
+
+			&-line {
+				width: 86px;
+				height: 4px;
+				background-color: $grey-dark;
+			}
 		}
 
 		&__description {
@@ -46,6 +52,7 @@
 				font-size: 14px;
 				line-height: 21px;
 				font-weight: 400;
+				text-align: center;
 			}
 		}
 	}

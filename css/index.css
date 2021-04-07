@@ -983,6 +983,11 @@ h3 {
   font-size: 15px;
   font-weight: 400;
 }
+.about-us__info__heading-line {
+  width: 86px;
+  height: 4px;
+  background-color: #8b8b8b;
+}
 .about-us__info__description {
   display: grid;
   justify-items: center;
@@ -992,6 +997,7 @@ h3 {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
+  text-align: center;
 }
 .about-us__dots {
   gap: 16px;
@@ -1083,6 +1089,11 @@ h3 {
   .portfolio__info__description {
     justify-items: center;
   }
+}
+.portfolio__info__description > p {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
 }
 @media (max-width: 1024px) {
   .portfolio__info__description > p {
