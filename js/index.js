@@ -1,14 +1,3 @@
-// let loading = true;
-
-// const container = $('.loading__container');
-// container.toggleClass('progress');
-// console.log(container);
-
-// $(() => {
-// 	container.toggleClass('progress');
-// 	console.log(container);
-// });
-
 $(() => {
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +18,6 @@ $(() => {
 				scrollTrigger: {
 					trigger: section,
 					start: 'top 40%',
-					// markers: true,
 				},
 			},
 		);
@@ -41,15 +29,11 @@ $(() => {
 		{
 			y: 3000,
 			duration: 1,
-			// opacity: 1,
-			// ease: 'easeInOut',
 			scrollTrigger: {
 				trigger: '.block1',
 				start: 'top 20%',
 				end: '+=' + window.innerHeight * 4,
 				scrub: 1,
-				// end: 'top 30%',
-				// markers: true,
 			},
 		},
 	);

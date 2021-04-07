@@ -1,169 +1,186 @@
 .portfolio {
-	@extend .custom;
-	justify-content: start !important;
+	display: grid;
+	position: relative;
+	justify-content: start;
+	padding: 60px 200px;
 
-	grid-template-columns: minmax(auto, 450px);
-	padding: calcToVw(80) calcToVw(180);
+	@include small {
+		padding: 30px;
+		gap: 64px;
+	}
 
 	background-color: $grey-light;
 
-	@include small {
-		padding: calcToVw(80);
-		grid-template-columns: minmax(auto, 920px);
-		background-color: transparent;
-	}
+	// @include small {
+	// 	padding: calcToVw(80);
+	// 	grid-template-columns: minmax(auto, 920px);
+	// 	background-color: transparent;
+	// }
 
-	@include large {
-		grid-template-columns: minmax(auto, calcToVw(450));
-		padding: calcToVw(40) calcToVw(180);
-	}
+	// @include large {
+	// 	grid-template-columns: minmax(auto, calcToVw(450));
+	// 	padding: calcToVw(40) calcToVw(180);
+	// }
 
 	&__container {
 		display: grid;
 		gap: 64px;
 	}
 
-	&__left {
-		// position: relative;
-		gap: calcToVw(64);
+	&__info {
+		display: grid;
+		gap: 64px;
+		max-width: 380px;
 		z-index: 1;
 
 		@include small {
-			& > * {
-				transform: translate(20px, 160px);
+			justify-self: center;
+			justify-items: center;
+		}
+
+		&__heading {
+			display: grid;
+			justify-items: start;
+			gap: 32px;
+
+			@include small {
+				justify-self: center;
+				justify-items: center;
 			}
 
-			&:before {
-				content: '';
-				position: absolute;
-				width: calc(100% + 200px);
-				height: calc(100% + 50px);
-				transform-origin: bottom;
-				transform: skew(-$skew);
-				padding: 32px;
-				box-sizing: content-box;
-				z-index: -1;
+			&-text {
+				display: grid;
+				gap: 4px;
+				text-align: center;
+				justify-items: start;
 
-				top: 96px;
-				right: 64px;
-				background-color: $grey-light;
+				@include small {
+					justify-items: center;
+				}
+
+				& > span {
+					text-transform: uppercase;
+					font-size: 15px;
+					font-weight: 400;
+				}
+			}
+
+			&-line {
+				width: 86px;
+				height: 4px;
+				background-color: #8b8b8b;
 			}
 		}
 
-		& .para {
-			width: auto;
-
-			@include large {
-				// width: calcToVw(250);
-			}
+		&__description {
+			display: grid;
+			justify-items: start;
+			gap: 32px;
 
 			@include small {
-				// width: 60%;
-				width: 90%;
+				justify-items: center;
+			}
+
+			& > p {
+				@include small {
+					text-align: center;
+				}
 			}
 		}
 	}
 
 	&__building {
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 100%;
+		@extend .negativeSkew;
+		// position: absolute;
+		// top: 0;
+		// right: 0;
+		// width: 50%;
+		height: calc(100% + 15vw);
+		margin-right: -150px;
+		margin-top: -5vw;
 		z-index: 1;
 		overflow: hidden;
 		transform-origin: bottom;
-		transform: skew(-$skew);
 
-		@include small {
-			transform: none;
-			// height:
-			margin-right: -40px;
+		@include large {
+			height: calc(100% + 20vw);
 		}
 
-		&:before {
-			content: '';
-			position: absolute;
-			width: 2px;
-			height: 360px;
-			left: 425px;
-			margin-top: -160px;
-			background-color: $white;
-			z-index: 1;
+		@include small {
+			width: 100%;
+			margin-top: auto;
+			height: auto;
+			transform: none;
 		}
 
 		&-wrapper {
 			position: absolute;
 			top: 0;
 			right: 0;
-			height: 120%;
-			margin-right: -12vw;
-			// height: 60vw;
-			margin-top: -4vw;
+			height: 100%;
 
 			@include small {
 				position: relative;
-				// height: auto;
-				height: 100vw;
-				margin-top: calcToVw(20);
-				margin-right: 0;
-			}
-
-			@include large {
-				height: 140%;
-				margin-right: 0;
-				// width: 50vw;
-				// margin-right: -30vw;
+				height: auto;
 			}
 		}
 
-		& img {
+		& > img {
+			@extend .positiveSkew;
 			height: 100%;
-			transform: skew($skew);
 			transform-origin: bottom;
 			z-index: 0;
 
 			@include small {
 				transform: none;
+				height: auto;
+				width: 100%;
 			}
 		}
 
 		&-info {
+			transform: skew(-$skew) translateY(-50%);
 			background-color: $white;
 			position: absolute;
-			width: auto;
-			bottom: 0;
+			top: calc(100% + 10vw);
 			right: 0;
-			// margin-right: 120px;
 			z-index: 2;
-			padding: 32px;
-			padding-left: 64px;
-			padding-right: 16vw;
-			transform: skew(-$skew) translateY(50%);
-			transform-origin: bottom;
+			padding: 50px 100px;
+
+			// padding-right: 400px;
+			transform-origin: top;
 
 			@include large {
-				padding-left: calcToVw(64);
-				padding-top: calcToVw(32);
-				padding-bottom: calcToVw(32);
+				top: calc(100% + 15vw);
 			}
 
 			@include small {
-				right: -40px;
+				top: 100%;
+				// padding: 0;
+				transform: skew(-$skew) translateY(-50%);
+				right: -100px;
 			}
-			// white-space: ;
 
-			& > .grid {
+			& > div {
+				display: grid;
+				gap: 16px;
 				white-space: nowrap;
-				width: calcToVw(280);
+				max-width: 400px;
 				transform: skew($skew);
 
 				@include small {
 					width: auto;
 				}
 
-				& h3 {
+				& > h3 {
 					white-space: initial;
 					font-weight: 700;
+				}
+
+				& > ul {
+					font-size: 14px;
+					line-height: 21px;
+					font-weight: 400;
 				}
 			}
 		}

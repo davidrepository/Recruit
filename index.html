@@ -79,44 +79,32 @@
 				<div class="cell"></div>
 			</div>
 			<section class="hero">
-				<div
-					class="hero__content-container grid grid__item"
-					selfy="center"
-					contentx="space-between"
-					flow="column"
-				>
-					<div class="hero__content-left grid" itemsx="start">
-						<div class="hero__content-left-text">
-							<h1 class="hero__content-left-heading">
+				<div class="hero__content-container">
+					<div class="hero__content-left">
+						<div class="hero__content-text">
+							<h1 class="hero__content-heading">
 								Car showroom and service building
 							</h1>
-							<ul class="hero__content-left-list para">
+							<ul class="hero__content-list">
 								<li>Location: Poland, Wćrocław</li>
 								<li>Design: 2013</li>
 							</ul>
 						</div>
-						<a
-							href="#"
-							class="button md primary hero__content-left-button origin"
-						>
+						<a href="#" class="button md primary">
 							<span>Read me</span>
 						</a>
 					</div>
 					<div class="hero__content-right">
-						<div class="hero__content-right-line"></div>
+						<div class="hero__content-line"></div>
 					</div>
 				</div>
 
 				<div class="hero__footer">
-					<div
-						class="container hero__footer-container grid"
-						itemsy="end"
-						flow="column"
-					>
+					<div class="hero__footer-container">
 						<div class="hero__footer-language">
 							<ul>
 								<li>Pl</li>
-								<li class="skewed"></li>
+								<li></li>
 								<li>En</li>
 							</ul>
 						</div>
@@ -134,73 +122,61 @@
 					</div>
 				</div>
 			</section>
-			<section class="about-us section grid" data-aos="fade-in">
+			<section class="about-us" data-aos="fade-in">
 				<img src="./img/structure.png" alt="" data-aos="fade-in" />
-				<div class="about-us__info grid" flow="row">
-					<div
-						class="about-us__info-text section__heading grid grid__item"
-						itemsx="center"
-						selfx="center"
-					>
-						<!-- contentx="center" -->
-						<div
-							class="about-us__info-heading section__heading-text grid"
-							itemsx="center"
-						>
-							<h1>Our Values</h1>
-							<span>Thanks we believe</span>
+				<div class="about-us__container">
+					<div class="about-us__info">
+						<div class="about-us__info__heading">
+							<div class="about-us__info__heading-text">
+								<h1>Our Values</h1>
+								<span>Thanks we believe</span>
+							</div>
+							<div class="about-us__info__heading-line"></div>
 						</div>
-						<div class="section__heading-line"></div>
-					</div>
 
-					<div
-						class="about-us__info-description section__description grid"
-						itemsx="center"
-					>
-						<p
-							class="section__description-text para"
-							align="center"
-						>
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit. Curabitur erat mi, bibendum nec egestas
-							pharetra, aliquam sit amet tortor. Donec mollis
-							vulputate lacinia. Integer ac nisl lectus. Cras
-							mollis semper est. Vivamus auctor lobortis tempus.
-							Nullam aliquet dignissim rutrum. Praesent sit amet
-							sollicitudin orci, sed sagittis turpis.
-						</p>
-						<a href="#" class="button lg ghost"
-							><span>About us</span></a
-						>
+						<div class="about-us__info__description">
+							<p class="about-us__info__description-text">
+								Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit. Curabitur erat mi, bibendum nec
+								egestas pharetra, aliquam sit amet tortor. Donec
+								mollis vulputate lacinia. Integer ac nisl
+								lectus. Cras mollis semper est. Vivamus auctor
+								lobortis tempus. Nullam aliquet dignissim
+								rutrum. Praesent sit amet sollicitudin orci, sed
+								sagittis turpis.
+							</p>
+							<a href="#" class="button lg ghost"
+								><span>About us</span></a
+							>
+						</div>
 					</div>
-				</div>
-				<div
-					class="about-us__dots grid"
-					gap="16px"
-					flow="column"
-					contentx="end"
-				>
-					<div class="about-us__dot about-us__dot-active"></div>
-					<div class="about-us__dot"></div>
-					<div class="about-us__dot"></div>
+					<div
+						class="about-us__dots grid"
+						gap="16px"
+						flow="column"
+						contentx="end"
+					>
+						<div class="about-us__dot about-us__dot-active"></div>
+						<div class="about-us__dot"></div>
+						<div class="about-us__dot"></div>
+					</div>
 				</div>
 			</section>
-			<section class="portfolio section" data-aos="fade-in">
-				<div class="portfolio__left grid">
+			<section class="portfolio" data-aos="fade-in">
+				<div class="portfolio__info">
 					<div
-						class="section__heading grid grid__item"
-						itemsx="start"
+						class="portfolio__info__heading section__heading grid grid__item"
 					>
 						<!-- contentx="center" -->
-						<div class="section__heading-text grid" itemsx="start">
+						<div class="portfolio__info__heading-text">
 							<h1>Portfolio</h1>
 							<span>Our vision</span>
 						</div>
-						<div class="section__heading-line"></div>
+						<div class="portfolio__info__heading-line"></div>
 					</div>
 
-					<div class="section__description grid" itemsx="start">
-						<p class="para" text="start">
+					<div class="portfolio__info__description">
+						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit. Curabitur erat mi, bibendum nec egestas
 							pharetra, aliquam sit amet tortor. Donec mollis
@@ -216,16 +192,16 @@
 				</div>
 				<div class="portfolio__building-wrapper">
 					<div class="portfolio__building">
-						<div class="portfolio__building-line"></div>
+						<!-- <div class="portfolio__building-line"></div> -->
 						<img src="./img/building.png" alt="" />
 					</div>
 					<div class="portfolio__building-info">
-						<div class="grid" gap="16px">
+						<div>
 							<h3>
 								Car showroom and service building - concept
 								design
 							</h3>
-							<ul class="para">
+							<ul>
 								<li>Location: Poland, Wrocław</li>
 								<li>Design: 2013</li>
 							</ul>
@@ -235,22 +211,17 @@
 			</section>
 			<section class="quotation" data-aos="fade-in">
 				<div class="quotation__container">
-					<div class="grid" flow="column" itemsy="center">
-						<h2 class="grid__item" selfx="center">Lorem ipsum</h2>
-						<div
-							class="quotation__quot grid__item grid"
-							itemsx="end"
-						>
-							<p class="quotation__quot-para para">
-								As an architect you design for the present, with
-								an awareness of the past, for a future which is
-								essentially unknown.
-							</p>
-							<span class="quotation__quot-author para"
-								>Norman Foster</span
-							>
-						</div>
+					<!-- <div class="grid" flow="column" itemsy="center"> -->
+					<h2>Lorem ipsum</h2>
+					<div class="quotation__quot">
+						<p>
+							As an architect you design for the present, with an
+							awareness of the past, for a future which is
+							essentially unknown.
+						</p>
+						<span>Norman Foster</span>
 					</div>
+					<!-- </div> -->
 				</div>
 			</section>
 			<section

@@ -77,67 +77,35 @@
 h1 {
 	font-weight: 700;
 	font-size: 56px;
-
-	@include small {
-		font-size: calcToVw(56 * 3);
-	}
-
-	@include large {
-		font-size: calcToVw(56);
-	}
 }
 
 h2 {
 	font-size: 32px;
 	font-weight: 700;
-
-	@include small {
-		font-size: calcToVw(32 * 3);
-	}
-
-	@include large {
-		font-size: calcToVw(32);
-	}
 }
 
 h3 {
 	font-size: 18px;
 	line-height: 21px;
 	font-weight: 700;
-
-	@include small {
-		font-size: calcToVw(18 * 4);
-		line-height: calcToVw(21 * 4);
-	}
-
-	@include large {
-		font-size: calcToVw(18);
-		line-height: calcToVw(21);
-	}
 }
 
 .para {
 	font-size: 14px;
 	line-height: 21px;
 	font-weight: 400;
-
-	@include small {
-		font-size: calcToVw(14 * 4);
-		line-height: calcToVw(21 * 4);
-	}
-
-	@include large {
-		font-size: calcToVw(14 * 1.5);
-		line-height: calcToVw(21 * 1.5);
-	}
 }
 
 .grid {
 	display: grid;
 }
 
-.skewed {
+.negativeSkew {
 	transform: skew(-$skew);
+}
+
+.positiveSkew {
+	transform: skew($skew);
 }
 
 .button {
@@ -149,29 +117,19 @@ h3 {
 
 	transform: skew(-$skew);
 
-	&.origin {
-		transform-origin: bottom;
-	}
+	transform-origin: bottom;
+	// &.origin {
+	// }
 
 	&.md {
 		height: 40px;
 		padding: 0 32px;
-
-		@include large {
-			height: calcToVw(40);
-			padding: 0 calcToVw(32);
-		}
 	}
 
 	&.lg {
 		height: 48px;
 		font-size: 16px;
 		padding: 0 40px;
-
-		@include large {
-			padding: 0 calcToVw(40);
-			height: calcToVw(48);
-		}
 	}
 
 	& > * {
@@ -180,10 +138,6 @@ h3 {
 		font-size: 16px;
 		line-height: 24px;
 		font-weight: 600;
-
-		@include large {
-			font-size: calcToVw(16);
-		}
 	}
 
 	&.primary {
@@ -200,31 +154,18 @@ h3 {
 		border: 1px solid #8b8b8b;
 		color: #8b8b8b;
 		background-color: transparent;
-
-		@include large {
-			border: calcToVw(1) solid #8b8b8b;
-		}
 	}
 }
 
 .section {
 	&__heading {
 		@extend .grid;
-
-		gap: calcToVw(32);
-
-		@include small {
-			gap: calcToVw(64);
-		}
+		gap: 32px;
 
 		&-text {
 			@extend .grid;
 			gap: 2px;
 			text-align: center;
-
-			@include large {
-				gap: calcToVw(2);
-			}
 
 			& h1 {
 				white-space: nowrap;
@@ -233,34 +174,20 @@ h3 {
 
 		& span {
 			text-transform: uppercase;
-			font-size: calcToVw(15);
+			font-size: 15px;
 			font-weight: 400;
-			white-space: nowrap;
-
-			@include small {
-				font-size: calcToVw(15 * 4);
-			}
 		}
 
 		&-line {
 			width: 86px;
 			height: 4px;
 			background-color: #8b8b8b;
-
-			@include small {
-				width: calcToVw(86 * 2);
-				height: calcToVw(4 * 2);
-			}
 		}
 	}
 
 	&__description {
 		@extend .grid;
 		gap: calcToVw(44);
-
-		@include small {
-			gap: calcToVw(44 * 2);
-		}
 
 		& > p {
 			width: 600px;

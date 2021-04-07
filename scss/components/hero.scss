@@ -1,13 +1,20 @@
 .hero {
-	@extend .custom;
+	display: grid;
+	position: relative;
+
 	height: 100vh;
-	grid-template-columns: minmax(auto, 920px);
-	padding: 0 180px;
+	padding-left: 200px;
+	padding-right: 260px;
 
 	// Background
 	background: url('../img/bg-hero.png') no-repeat;
 	background-size: cover;
 	background-position: center;
+
+	@include small {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
 
 	&:before {
 		content: '';
@@ -19,20 +26,13 @@
 		background-color: rgba(0, 0, 0, 0.2);
 	}
 
-	// Responsive
-	@include small {
-		grid-template-columns: minmax(auto, 700px);
-		padding: 0 20px;
-	}
-
-	@include large {
-		grid-template-columns: minmax(auto, calcToVw(920));
-		// padding: 0 calcToVw(100);
-		padding: 0;
-	}
-
 	&__content {
 		&-container {
+			display: grid;
+
+			align-self: center;
+			justify-content: space-between;
+			grid-auto-flow: column;
 			margin-top: $header-height;
 			color: $white;
 			z-index: 1;
@@ -49,83 +49,80 @@
 			}
 		}
 
+		// LEFT
 		&-left {
 			display: grid;
 			align-content: start;
+			justify-items: start;
 			gap: 40px;
 
 			@include small {
-				justify-items: center !important;
-				gap: calcToVw(40);
-			}
-
-			@include large {
-				gap: calcToVw(40);
-			}
-
-			&-text {
-				display: grid;
-				align-content: start;
-				gap: 32px;
-
-				@include small {
-					justify-items: center;
-					gap: calcToVw(32);
-				}
-
-				@include large {
-					gap: calcToVw(32);
-				}
-			}
-
-			&-heading {
-				width: 540px;
-
-				@include small {
-					text-align: center;
-					width: auto;
-				}
-
-				@include large {
-					width: calcToVw(540);
-				}
-			}
-
-			&-list {
-				font-weight: 400;
-				@include small {
-					text-align: center;
-				}
+				justify-items: center;
 			}
 		}
 
-		&-right {
-			&-line {
-				height: 320px;
-				width: 2px;
-				background-color: $white;
-				transform: skew(-$skew);
-				transform-origin: top;
-
-				@include large {
-					height: calcToVw(320);
-					width: calcToVw(2);
-				}
-			}
+		&-text {
+			display: grid;
+			align-content: start;
+			gap: 32px;
 
 			@include small {
+				justify-items: center;
+			}
+		}
+
+		&-heading {
+			width: 540px;
+
+			@include small {
+				text-align: center;
+				width: auto;
+			}
+
+			@include large {
+				width: calcToVw(540);
+			}
+		}
+
+		&-list {
+			font-size: 14px;
+			line-height: 21px;
+			font-weight: 400;
+
+			@include small {
+				text-align: center;
+			}
+		}
+
+		// RIGHT
+		&-right {
+			@include small {
 				display: none;
+			}
+		}
+
+		&-line {
+			height: 320px;
+			width: 2px;
+			background-color: $white;
+			transform: skew(-$skew);
+			transform-origin: top;
+
+			@include large {
+				height: calcToVw(320);
+				width: calcToVw(2);
 			}
 		}
 	}
 
 	&__footer {
+		color: $white;
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		padding: 40px $header-padding;
 
-		grid-template-columns: minmax(auto, 1fr);
+		// grid-template-columns: minmax(auto, 1fr);
 		z-index: 2;
 
 		@include small {
@@ -139,6 +136,8 @@
 
 		&-container {
 			display: grid;
+			grid-auto-flow: column;
+			align-items: center;
 			color: $white;
 		}
 
@@ -147,24 +146,14 @@
 			font-size: 14px;
 			font-weight: 600;
 
-			@include large {
-				font-size: calcToVw(14);
-			}
-
 			ul {
 				display: grid;
 				grid-auto-flow: column;
 				gap: 12px;
 
-				@include large {
-					gap: calcToVw(12);
-				}
+				& li:nth-child(2) {
+					@extend .negativeSkew;
 
-				@include small {
-					gap: calcToVw(12);
-				}
-
-				& .skewed {
 					width: 2px;
 					height: 100%;
 					background-color: $white;
