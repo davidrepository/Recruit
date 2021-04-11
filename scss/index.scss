@@ -53,13 +53,17 @@ body {
 	overflow: hidden;
 
 	.grid__background {
+		display: grid;
+		grid-template-columns: repeat(16, 1fr);
 		z-index: -1;
 		position: absolute;
 		top: 100vh;
-		width: 240vw;
+		width: 4000px;
+		position: absolute;
 		height: 100%;
-		left: 0;
-		transform: skew(-22deg);
+		left: 50%;
+
+		transform: skew(-22deg) translateX(-50%);
 		transform-origin: top;
 		padding-left: 96px;
 
@@ -75,10 +79,6 @@ body {
 			height: 240px;
 			background-color: $grey-light;
 			margin-top: 192px;
-
-			@include large {
-				height: calcToVw(240);
-			}
 		}
 
 		& .block2 {
@@ -87,10 +87,6 @@ body {
 			width: calc(100% + 150px);
 			margin-top: 2680px;
 			background-color: $grey-light;
-
-			@include large {
-				height: calcToVw(420);
-			}
 		}
 	}
 

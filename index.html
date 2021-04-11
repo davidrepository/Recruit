@@ -24,7 +24,7 @@
 					src="./img/hamburger.svg"
 					alt=""
 				/>
-				<ul class="header__menu">
+				<ul class="header__menu para">
 					<li>
 						<a
 							href="#"
@@ -63,13 +63,17 @@
 				<div class="cell"></div>
 				<div class="cell"></div>
 				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<div class="block1"></div>
 				</div>
 				<div class="cell"></div>
-				<div class="cell"></div>
-				<div class="cell"></div>
 				<div class="cell"><div class="block2"></div></div>
+				<div class="cell"></div>
 				<div class="cell"></div>
 				<div class="cell"></div>
 				<div class="cell"></div>
@@ -82,10 +86,10 @@
 				<div class="hero__content-container">
 					<div class="hero__content-left">
 						<div class="hero__content-text">
-							<h1 class="hero__content-heading">
+							<h1 class="hero__content-heading heading1">
 								Car showroom and service building
 							</h1>
-							<ul class="hero__content-list">
+							<ul class="hero__content-list para">
 								<li>Location: Poland, Wćrocław</li>
 								<li>Design: 2013</li>
 							</ul>
@@ -101,7 +105,7 @@
 
 				<div class="hero__footer">
 					<div class="hero__footer-container">
-						<div class="hero__footer-language">
+						<div class="hero__footer-language para">
 							<ul>
 								<li>Pl</li>
 								<li></li>
@@ -117,7 +121,7 @@
 							<div class="button md ghost origin">
 								<img src="./img/play.svg" alt="" />
 							</div>
-							<span>Our story</span>
+							<span class="para">Our story</span>
 						</div>
 					</div>
 				</div>
@@ -125,17 +129,19 @@
 			<section class="about-us" data-aos="fade-in">
 				<img src="./img/structure.png" alt="" data-aos="fade-in" />
 				<div class="about-us__container">
-					<div class="about-us__info">
-						<div class="about-us__info__heading">
-							<div class="about-us__info__heading-text">
-								<h1>Our Values</h1>
+					<div class="about-us__info section">
+						<div class="section__heading section__heading--center">
+							<div class="section__heading-text">
+								<h2 class="heading1">Our Values</h2>
 								<span>Thanks we believe</span>
 							</div>
-							<div class="about-us__info__heading-line"></div>
+							<div class="section__heading-line"></div>
 						</div>
 
-						<div class="about-us__info__description">
-							<p class="about-us__info__description-text">
+						<div
+							class="section__description section__description--center"
+						>
+							<p class="section__description-para">
 								Lorem ipsum dolor sit amet, consectetur
 								adipiscing elit. Curabitur erat mi, bibendum nec
 								egestas pharetra, aliquam sit amet tortor. Donec
@@ -150,12 +156,7 @@
 							>
 						</div>
 					</div>
-					<div
-						class="about-us__dots grid"
-						gap="16px"
-						flow="column"
-						contentx="end"
-					>
+					<div class="about-us__dots">
 						<div class="about-us__dot about-us__dot-active"></div>
 						<div class="about-us__dot"></div>
 						<div class="about-us__dot"></div>
@@ -164,19 +165,16 @@
 			</section>
 			<section class="portfolio" data-aos="fade-in">
 				<div class="portfolio__info">
-					<div
-						class="portfolio__info__heading section__heading grid grid__item"
-					>
-						<!-- contentx="center" -->
-						<div class="portfolio__info__heading-text">
-							<h1>Portfolio</h1>
+					<div class="section__heading">
+						<div class="section__heading-text">
+							<h2 class="heading1">Portfolio</h2>
 							<span>Our vision</span>
 						</div>
-						<div class="portfolio__info__heading-line"></div>
+						<div class="section__heading-line"></div>
 					</div>
 
-					<div class="portfolio__info__description">
-						<p>
+					<div class="section__description">
+						<p class="section__description-para">
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit. Curabitur erat mi, bibendum nec egestas
 							pharetra, aliquam sit amet tortor. Donec mollis
@@ -192,16 +190,15 @@
 				</div>
 				<div class="portfolio__building-wrapper">
 					<div class="portfolio__building">
-						<!-- <div class="portfolio__building-line"></div> -->
 						<img src="./img/building.png" alt="" />
 					</div>
 					<div class="portfolio__building-info">
 						<div>
-							<h3>
+							<h3 class="heading3">
 								Car showroom and service building - concept
 								design
 							</h3>
-							<ul>
+							<ul class="para">
 								<li>Location: Poland, Wrocław</li>
 								<li>Design: 2013</li>
 							</ul>
@@ -211,94 +208,92 @@
 			</section>
 			<section class="quotation" data-aos="fade-in">
 				<div class="quotation__container">
-					<!-- <div class="grid" flow="column" itemsy="center"> -->
-					<h2>Lorem ipsum</h2>
-					<div class="quotation__quot">
-						<p>
-							As an architect you design for the present, with an
-							awareness of the past, for a future which is
-							essentially unknown.
-						</p>
-						<span>Norman Foster</span>
+					<div>
+						<h3 class="heading2">Lorem ipsum</h3>
+						<div class="quotation__quot">
+							<p class="para">
+								As an architect you design for the present, with
+								an awareness of the past, for a future which is
+								essentially unknown.
+							</p>
+							<span class="para">Norman Foster</span>
+						</div>
 					</div>
-					<!-- </div> -->
 				</div>
 			</section>
-			<section
-				class="latest-news grid grid__item"
-				selfx="center"
-				selfy="center"
-			>
-				<div class="section__heading grid grid__item" itemsx="center">
-					<div class="section__heading-text grid" itemsx="center">
-						<h1>Latest news</h1>
+			<section class="latest-news">
+				<div class="section__heading section__heading--center">
+					<div class="section__heading-text">
+						<h1 class="heading1">Latest news</h1>
 						<span>Keep up to date</span>
 					</div>
 					<div class="section__heading-line"></div>
 				</div>
-				<div class="latest-news__body section">
-					<div class="building__container">
-						<div class="building">
+
+				<div class="latest-news__content">
+					<div class="latest-news__building-container">
+						<div class="latest-news__building">
 							<img src="./img/building2.png" alt="" />
 						</div>
 					</div>
-					<div class="grid" columns="2">
-						<div class="latest-news__body-container grid">
-							<div
-								class="latest-news__body-container-text section__description grid"
-								itemsx="start"
-								contenty="start"
-							>
+					<div class="latest-news__body">
+						<div>
+							<div class="latest-news__body-container">
 								<div
-									class="latest-news__body-container-text-t grid"
+									class="latest-news__body-container-text section__description"
 								>
-									<h2>Korean Culture Festival in Kraków</h2>
-									<p class="para">
-										April 23th, 2018 we had the pleasure of
-										taking part in the Festival of Korean
-										Culture in Krakow. We met with students
-										and lecturers of Asian studies at the
-										Jagiellonian University in Krakow. At
-										the meeting Mr President - Junsik Yoon
-										shared with the audience his experience
-										in building business in Poland. Thank
-										you for the invitation and warm welcome.
-									</p>
+									<div
+										class="latest-news__body-container-text-t"
+									>
+										<h3 class="heading2">
+											Korean Culture Festival in Kraków
+										</h3>
+										<p class="para">
+											April 23th, 2018 we had the pleasure
+											of taking part in the Festival of
+											Korean Culture in Krakow. We met
+											with students and lecturers of Asian
+											studies at the Jagiellonian
+											University in Krakow. At the meeting
+											Mr President - Junsik Yoon shared
+											with the audience his experience in
+											building business in Poland. Thank
+											you for the invitation and warm
+											welcome.
+										</p>
+									</div>
+									<a href="#" class="button md secondary"
+										><span>Read me</span></a
+									>
 								</div>
-								<a href="#" class="button md secondary"
-									><span>Read me</span></a
-								>
-							</div>
 
-							<ul
-								class="latest-news__carousel grid para"
-								flow="row"
-								contenty="start"
-							>
-								<li class="latest-news__carousel-item">
-									YOON Group promo video
-								</li>
-								<li
-									class="latest-news__carousel-item latest-news__carousel-item--active"
-								>
-									YOON Group is a sponsor of WKS Śląsk Wrocław
-								</li>
-								<li class="latest-news__carousel-item">
-									YOON Group is a sponsor of Akademia
-									Siatkówki
-								</li>
-								<li class="latest-news__carousel-item">
-									Korean Culture Festival in Kraków
-								</li>
-							</ul>
+								<ul class="latest-news__carousel">
+									<li class="latest-news__carousel-item">
+										YOON Group promo video
+									</li>
+									<li
+										class="latest-news__carousel-item latest-news__carousel-item--active"
+									>
+										YOON Group is a sponsor of WKS Śląsk
+										Wrocław
+									</li>
+									<li class="latest-news__carousel-item">
+										YOON Group is a sponsor of Akademia
+										Siatkówki
+									</li>
+									<li class="latest-news__carousel-item">
+										Korean Culture Festival in Kraków
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section class="trusted">
-				<div class="section__heading grid grid__item" itemsx="center">
-					<div class="section__heading-text grid" itemsx="center">
-						<h1>We were trusted</h1>
+				<div class="section__heading section__heading--center">
+					<div class="section__heading-text">
+						<h2 class="heading1">We were trusted</h2>
 						<span>Our customers are important to us</span>
 					</div>
 					<div class="section__heading-line"></div>
@@ -324,8 +319,6 @@
 		></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script> -->
 		<script src="./js/index.js"></script>
 	</body>
 </html>

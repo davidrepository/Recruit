@@ -54,9 +54,14 @@
 			height: 18px;
 			line-height: 18px;
 			padding: 0 32px;
-			font-size: 14px;
+			// font-size: 14px;
 			color: $white;
 			border-right: 1px solid $black;
+
+			@include xlarge {
+				height: 28px;
+				line-height: 28px;
+			}
 
 			&:hover {
 				background-color: $black;
@@ -67,6 +72,11 @@
 				height: 28px;
 				line-height: 28px;
 				border: 1px solid $black;
+
+				@include xlarge {
+					height: 40px;
+					line-height: 40px;
+				}
 			}
 
 			// Childrens

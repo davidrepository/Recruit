@@ -1,103 +1,33 @@
-@mixin large {
-	@media (min-width: #{$lg}) {
-		@content;
-	}
-}
-
 @mixin small {
 	@media (max-width: #{$sm}) {
 		@content;
 	}
 }
 
-@function get-vw($target, $breakpoint) {
-	$vw-context: ($breakpoint * 0.01) * 1px;
-	// @debug ($target / $vw-context);
-	@return ($target / $vw-context) * 1vw;
-}
-
-@function calcToVw($px) {
-	@return $px * 0.06vw;
-}
-
-@each $column in $gridColumns {
-	.grid[columns='#{$column}'] {
-		grid-template-columns: repeat($column, 1fr);
+@mixin large {
+	@media (min-width: #{$lg}) {
+		@content;
 	}
 }
 
-@each $gap in $gridGap {
-	.grid[gap='#{$gap}'] {
-		gap: #{$gap};
+@mixin xlarge {
+	@media (min-width: #{$xlg}) {
+		@content;
 	}
 }
 
-@each $row in $gridRows {
-	.grid[rows='#{$row}'] {
-		grid-template-rows: repeat($row, 1fr);
-	}
-}
-
-@each $flow in $flows {
-	.grid[flow='#{$flow}'] {
-		grid-auto-flow: #{$flow};
-	}
-}
-
-@each $position in $gridPositions {
-	.grid__item[selfx='#{$position}'] {
-		justify-self: #{$position};
-	}
-
-	.grid__item[selfy='#{$position}'] {
-		align-self: #{$position};
-	}
-
-	.grid[contentx='#{$position}'] {
-		justify-content: #{$position};
-	}
-
-	.grid[contenty='#{$position}'] {
-		align-content: #{$position};
-	}
-
-	.grid[itemsx='#{$position}'] {
-		justify-items: #{$position};
-	}
-
-	.grid[itemsy='#{$position}'] {
-		align-items: #{$position};
-	}
-
-	.para[text='#{$position}'] {
-		text-align: #{$position};
-	}
-}
-
-h1 {
-	font-weight: 700;
-	font-size: 56px;
-}
-
-h2 {
-	font-size: 32px;
-	font-weight: 700;
-}
-
-h3 {
-	font-size: 18px;
-	line-height: 21px;
-	font-weight: 700;
+@mixin setFont($fontSize, $lineHeight, $fontWeight) {
+	font-size: #{$fontSize};
+	line-height: #{$lineHeight};
+	font-weight: #{$fontWeight};
 }
 
 .para {
-	font-size: 14px;
-	line-height: 21px;
-	font-weight: 400;
-}
+	@include setFont(14px, 21px, 400);
 
-.grid {
-	display: grid;
+	@include xlarge {
+		@include setFont(28px, 42px, 400);
+	}
 }
 
 .negativeSkew {
@@ -115,27 +45,37 @@ h3 {
 	font-size: 16px;
 	font-weight: 600;
 
+	@include xlarge {
+		font-size: 18px;
+	}
+
 	transform: skew(-$skew);
 
 	transform-origin: bottom;
-	// &.origin {
-	// }
 
 	&.md {
 		height: 40px;
 		padding: 0 32px;
+
+		@include xlarge {
+			height: 48px;
+			padding: 0 40px;
+		}
 	}
 
 	&.lg {
 		height: 48px;
-		font-size: 16px;
 		padding: 0 40px;
+
+		@include xlarge {
+			height: 56px;
+			padding: 0 48px;
+		}
 	}
 
 	& > * {
 		display: block;
 		transform: skew($skew);
-		font-size: 16px;
 		line-height: 24px;
 		font-weight: 600;
 	}
@@ -154,57 +94,93 @@ h3 {
 		border: 1px solid #8b8b8b;
 		color: #8b8b8b;
 		background-color: transparent;
+
+		@include xlarge {
+			border-width: 2px;
+		}
 	}
 }
 
 .section {
 	&__heading {
-		@extend .grid;
+		display: grid;
 		gap: 32px;
 
 		&-text {
-			@extend .grid;
-			gap: 2px;
-			text-align: center;
+			display: grid;
+			justify-items: start;
 
-			& h1 {
+			& > span {
+				@include setFont(15px, 18px, 400);
 				white-space: nowrap;
+				text-transform: uppercase;
+
+				@include xlarge {
+					@include setFont(30px, 36px, 400);
+				}
 			}
 		}
 
-		& span {
-			text-transform: uppercase;
-			font-size: 15px;
-			font-weight: 400;
-		}
-
 		&-line {
+			@extend .negativeSkew;
 			width: 86px;
 			height: 4px;
-			background-color: #8b8b8b;
+			background-color: $grey-dark;
+		}
+
+		&--center {
+			justify-items: center;
+
+			& .section__heading-text {
+				display: grid;
+				justify-items: center;
+			}
 		}
 	}
 
 	&__description {
-		@extend .grid;
-		gap: calcToVw(44);
+		display: grid;
+		justify-items: start;
+		gap: 32px;
 
-		& > p {
-			width: 600px;
+		&-para {
+			@include setFont(14px, 21px, 400);
 
-			@include large {
-				width: auto;
+			@include xlarge {
+				@include setFont(28px, 42px, 400);
 			}
+		}
 
-			@include small {
-				width: auto;
+		&--center {
+			justify-items: center;
+
+			& > .section__description-para {
+				text-align: center;
 			}
 		}
 	}
 }
 
-.custom {
-	display: grid;
-	position: relative;
-	justify-content: center;
+.heading1 {
+	@include setFont(56px, 68px, 700);
+
+	@include xlarge {
+		@include setFont(112px, 136px, 700);
+	}
+}
+
+.heading2 {
+	@include setFont(32px, 40px, 700);
+
+	@include xlarge {
+		@include setFont(64px, 80px, 700);
+	}
+}
+
+.heading3 {
+	@include setFont(18px, 21px, 700);
+
+	@include xlarge {
+		@include setFont(36px, 42px, 700);
+	}
 }

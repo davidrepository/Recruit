@@ -1,10 +1,16 @@
 .hero {
 	display: grid;
 	position: relative;
+	width: 100vw;
+	padding: 0 80px;
 
 	height: 100vh;
-	padding-left: 200px;
-	padding-right: 260px;
+	grid-template-columns: minmax(auto, 800px);
+	justify-content: center;
+
+	@include xlarge {
+		grid-template-columns: minmax(auto, 1400px);
+	}
 
 	// Background
 	background: url('../img/bg-hero.png') no-repeat;
@@ -29,28 +35,25 @@
 	&__content {
 		&-container {
 			display: grid;
-
+			grid-auto-flow: column;
 			align-self: center;
 			justify-content: space-between;
-			grid-auto-flow: column;
-			margin-top: $header-height;
 			color: $white;
+			margin-top: $header-height;
 			z-index: 1;
 
 			@include small {
 				margin-top: 0;
+				justify-content: center;
 
 				&-right {
 					display: none;
 				}
 			}
-
-			@include large {
-			}
 		}
 
-		// LEFT
 		&-left {
+			max-width: 580px;
 			display: grid;
 			align-content: start;
 			justify-items: start;
@@ -59,12 +62,16 @@
 			@include small {
 				justify-items: center;
 			}
+
+			@include xlarge {
+				max-width: 800px;
+			}
 		}
 
 		&-text {
 			display: grid;
 			align-content: start;
-			gap: 32px;
+			gap: 20px;
 
 			@include small {
 				justify-items: center;
@@ -72,23 +79,13 @@
 		}
 
 		&-heading {
-			width: 540px;
-
 			@include small {
 				text-align: center;
 				width: auto;
 			}
-
-			@include large {
-				width: calcToVw(540);
-			}
 		}
 
 		&-list {
-			font-size: 14px;
-			line-height: 21px;
-			font-weight: 400;
-
 			@include small {
 				text-align: center;
 			}
@@ -102,15 +99,14 @@
 		}
 
 		&-line {
-			height: 320px;
+			@extend .negativeSkew;
+			height: 370px;
 			width: 2px;
 			background-color: $white;
-			transform: skew(-$skew);
 			transform-origin: top;
 
-			@include large {
-				height: calcToVw(320);
-				width: calcToVw(2);
+			@include xlarge {
+				height: 500px;
 			}
 		}
 	}
@@ -120,19 +116,9 @@
 		position: absolute;
 		bottom: 0;
 		width: 100%;
-		padding: 40px $header-padding;
-
-		// grid-template-columns: minmax(auto, 1fr);
+		padding: 0 48px;
+		padding-bottom: 20px;
 		z-index: 2;
-
-		@include small {
-			padding: 20px 48px;
-		}
-
-		@include large {
-			height: auto;
-			// padding:
-		}
 
 		&-container {
 			display: grid;
@@ -142,9 +128,8 @@
 		}
 
 		&-language {
+			// @include setFont(14px, 18px, 600);
 			justify-self: start;
-			font-size: 14px;
-			font-weight: 600;
 
 			ul {
 				display: grid;
@@ -164,12 +149,6 @@
 		&-mouse {
 			justify-self: center;
 
-			& img {
-				@include large {
-					height: calcToVw(28);
-				}
-			}
-
 			@include small {
 				display: none;
 			}
@@ -181,67 +160,47 @@
 			display: grid;
 			gap: 8px;
 			justify-items: center;
+			margin-right: 50px;
 
-			& .button > img {
-				@include large {
-					height: calcToVw(16);
-				}
+			@include small {
+				margin-right: 30px;
 			}
 
 			&:before {
+				@extend .negativeSkew;
+
 				content: '';
 				position: absolute;
-				top: -40px;
-				left: -240px;
+				top: -30px;
+				left: -80px;
 				width: 320px;
 				height: 320px;
-				background-color: $white;
-				// z-index: 1;
-
-				transform: skew(-$skew);
-
-				@include large {
-					top: calcToVw(-40);
-					left: calcToVw(-240);
-					width: calcToVw(320);
-					height: calcToVw(320);
-				}
+				background-color: #fff;
+				transform-origin: top;
 
 				@include small {
-					width: 240px;
-					height: 240px;
-					top: -20px;
-					left: -60px;
+					left: -40px;
 				}
-				// @include small {
-				// 	width: calcToVw(320);
-				// 	height: calcToVw(320);
-				// 	left: calcToVw(-200);
-				// 	top: 0;
-				// }
+
+				@include xlarge {
+					left: -20px;
+				}
 			}
 
 			& > * {
-				margin-left: -180px;
 				z-index: 1;
-
-				@include small {
-					margin-left: 0;
-				}
-
-				@include large {
-					margin-left: calcToVw(-180);
-				}
 			}
 
 			& > span {
+				// @include setFont(14px, 21px, 400);
 				color: $black;
-				font-size: 14px;
-				font-weight: 400;
+			}
 
-				@include large {
-					font-size: calcToVw(14);
-				}
+			& > .button {
+				height: 50px !important;
+				width: 60px !important;
+				padding: 0 !important;
+				justify-content: center;
 			}
 		}
 	}
