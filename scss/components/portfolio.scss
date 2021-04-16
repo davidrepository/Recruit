@@ -13,13 +13,6 @@
 		padding-left: 0;
 	}
 
-	// @include xlarge {
-	// 	grid-template-columns: minmax(auto, 2000px);
-	// 	justify-content: center;
-	// 	padding-left: 0;
-	// 	// grid-template-columns: none;
-	// }
-
 	@include small {
 		padding: 0;
 		padding-top: 80px;
@@ -41,6 +34,10 @@
 
 		@media (max-width: 1245px) {
 			max-width: 180px;
+		}
+
+		@include xlarge {
+			max-width: 600px;
 		}
 
 		@include small {
@@ -139,15 +136,6 @@
 			right: 0;
 			z-index: 2;
 			padding: 50px 100px;
-			// padding-right: 200px;
-
-			// @media (max-width: 1360px) {
-			// 	padding-right: 280px;
-			// }
-
-			// @include xlarge {
-			// 	padding-right: 600px;
-			// }
 
 			@media (max-width: 1170px) {
 				left: 20%;
