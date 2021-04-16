@@ -78,7 +78,7 @@
 			background-color: $grey-light;
 			margin-top: 192px;
 
-			@include large {
+			@include xlarge {
 				// width: 150%;
 				width: 360px;
 				height: 360px;
@@ -92,7 +92,7 @@
 			margin-top: 2680px;
 			background-color: $grey-light;
 
-			@include large {
+			@include xlarge {
 				height: 630px;
 				width: 630px;
 			}

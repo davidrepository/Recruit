@@ -313,7 +313,7 @@ li:last-of-type .menu__link {
   }
 }
 .header {
-  z-index: 1;
+  z-index: 4;
   display: grid;
   position: relative;
   width: 100vw;
@@ -1242,7 +1242,7 @@ li:last-of-type .menu__link {
   background-color: #f4f4f4;
   margin-top: 192px;
 }
-@media (min-width: 1440px) {
+@media (min-width: 2400px) {
   .main .grid__background .block1 {
     width: 360px;
     height: 360px;
@@ -1255,7 +1255,7 @@ li:last-of-type .menu__link {
   margin-top: 2680px;
   background-color: #f4f4f4;
 }
-@media (min-width: 1440px) {
+@media (min-width: 2400px) {
   .main .grid__background .block2 {
     height: 630px;
     width: 630px;
