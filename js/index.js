@@ -2,13 +2,13 @@ $(() => {
 	gsap.registerPlugin(ScrollTrigger);
 
 	const sections = document.querySelectorAll('section');
-	const block1 = document.querySelector('.block1');
-	const block2 = document.querySelector('.block2');
+	const block1 = document.querySelector('.grid__block1');
+	const block2 = document.querySelector('.grid__block2');
 
 	sections.forEach(section => {
 		gsap.fromTo(
 			section.children,
-			{ y: 100, opacity: 0 },
+			{ y: 50, opacity: 0 },
 			{
 				y: 0,
 				opacity: 1,
@@ -27,11 +27,11 @@ $(() => {
 		block1,
 		{ y: 0 },
 		{
-			y: 3000,
+			y: 2000,
 			duration: 1,
 			scrollTrigger: {
-				trigger: '.block1',
-				start: 'top 20%',
+				trigger: '.grid__block1',
+				start: 'top 40%',
 				end: '+=' + window.innerHeight * 4,
 				scrub: 1,
 			},
@@ -47,9 +47,9 @@ $(() => {
 			// opacity: 1,
 			// ease: 'easeInOut',
 			scrollTrigger: {
-				trigger: '.block2',
-				start: 'top 20%',
-				end: '+=' + window.innerHeight * 4,
+				trigger: '.grid__block2',
+				start: 'top 10%',
+				end: '+=' + window.innerHeight * 6,
 				scrub: 1,
 				// end: 'top 30%',
 				// markers: true,

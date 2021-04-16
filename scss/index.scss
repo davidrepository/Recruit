@@ -50,33 +50,40 @@
 	position: relative;
 	overflow: hidden;
 
-	.grid__background {
-		display: grid;
-		grid-template-columns: repeat(16, 1fr);
-		z-index: -1;
-		position: absolute;
-		top: 100vh;
-		width: 4000px;
-		position: absolute;
-		height: 100%;
-		left: 50%;
+	.grid {
+		&__background {
+			display: grid;
+			grid-template-columns: repeat(24, 1fr);
+			z-index: -1;
+			position: absolute;
+			top: 100vh;
+			left: 0;
+			width: 4000px;
+			position: absolute;
+			height: 100%;
 
-		transform: skew(-22deg) translateX(-50%);
-		transform-origin: top;
-		padding-left: 96px;
+			transform: skew(-22deg);
+			transform-origin: top;
+			padding-left: 96px;
 
-		& > * {
-			border-right: 1px solid $grey-light;
+			& > * {
+				border-right: 1px solid $grey-light;
 
-			&:first-of-type {
-				border-left: 1px solid $grey-light;
+				&:first-of-type {
+					border-left: 1px solid $grey-light;
+				}
 			}
 		}
 
-		& .block1 {
-			height: 240px;
+		&__cell {
+			position: relative;
+		}
+
+		&__block1 {
+			height: 200px;
+			width: calc(100% + 60px);
 			background-color: $grey-light;
-			margin-top: 192px;
+			// margin-top: 260px;
 
 			@include xlarge {
 				// width: 150%;
@@ -85,10 +92,10 @@
 			}
 		}
 
-		& .block2 {
+		&__block2 {
 			height: 420px;
 			margin-left: -150px;
-			width: calc(100% + 150px);
+			width: calc(100% + 200px);
 			margin-top: 2680px;
 			background-color: $grey-light;
 
@@ -96,6 +103,13 @@
 				height: 630px;
 				width: 630px;
 			}
+		}
+
+		&__block3 {
+			height: 500px;
+			width: 500px;
+			background-color: red;
+			margin-top: 2000px;
 		}
 	}
 }

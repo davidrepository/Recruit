@@ -313,7 +313,7 @@ li:last-of-type .menu__link {
   }
 }
 .header {
-  z-index: 4;
+  z-index: 1;
   display: grid;
   position: relative;
   width: 100vw;
@@ -1195,15 +1195,15 @@ li:last-of-type .menu__link {
 }
 .main .grid__background {
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
+  grid-template-columns: repeat(24, 1fr);
   z-index: -1;
   position: absolute;
   top: 100vh;
+  left: 0;
   width: 4000px;
   position: absolute;
   height: 100%;
-  left: 50%;
-  transform: skew(-22deg) translateX(-50%);
+  transform: skew(-22deg);
   transform-origin: top;
   padding-left: 96px;
 }
@@ -1213,29 +1213,38 @@ li:last-of-type .menu__link {
 .main .grid__background > *:first-of-type {
   border-left: 1px solid #f4f4f4;
 }
-.main .grid__background .block1 {
-  height: 240px;
+.main .grid__cell {
+  position: relative;
+}
+.main .grid__block1 {
+  height: 200px;
+  width: calc(100% + 60px);
   background-color: #f4f4f4;
-  margin-top: 192px;
 }
 @media (min-width: 2400px) {
-  .main .grid__background .block1 {
+  .main .grid__block1 {
     width: 360px;
     height: 360px;
   }
 }
-.main .grid__background .block2 {
+.main .grid__block2 {
   height: 420px;
   margin-left: -150px;
-  width: calc(100% + 150px);
+  width: calc(100% + 200px);
   margin-top: 2680px;
   background-color: #f4f4f4;
 }
 @media (min-width: 2400px) {
-  .main .grid__background .block2 {
+  .main .grid__block2 {
     height: 630px;
     width: 630px;
   }
+}
+.main .grid__block3 {
+  height: 500px;
+  width: 500px;
+  background-color: red;
+  margin-top: 2000px;
 }
 
 /*# sourceMappingURL=index.css.map */
