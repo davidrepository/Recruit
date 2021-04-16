@@ -60,12 +60,12 @@ $(() => {
 		block3,
 		{ y: 0 },
 		{
-			y: 4000,
+			y: 8000,
 			duration: 1,
 			scrollTrigger: {
 				trigger: '.grid__block3',
 				start: 'top 20%',
-				end: '+=' + window.innerHeight * 4,
+				end: '+=' + window.innerHeight * 20,
 				scrub: 1,
 			},
 		},
