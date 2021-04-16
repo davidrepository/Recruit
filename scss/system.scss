@@ -53,7 +53,7 @@
 
 	transform-origin: bottom;
 
-	&.md {
+	&--md {
 		height: 40px;
 		padding: 0 32px;
 
@@ -63,7 +63,7 @@
 		}
 	}
 
-	&.lg {
+	&--lg {
 		height: 48px;
 		padding: 0 40px;
 
@@ -80,17 +80,17 @@
 		font-weight: 600;
 	}
 
-	&.primary {
+	&--primary {
 		background-color: $white;
 		color: $black;
 	}
 
-	&.secondary {
+	&--secondary {
 		color: $white;
 		background-color: #8b8b8b;
 	}
 
-	&.ghost {
+	&--ghost {
 		border: 1px solid #8b8b8b;
 		color: #8b8b8b;
 		background-color: transparent;
@@ -101,67 +101,91 @@
 	}
 }
 
-.section {
+.section-lead {
 	&__heading {
 		display: grid;
-		gap: 32px;
-
-		&-text {
-			display: grid;
-			justify-items: start;
-
-			& > span {
-				@include setFont(15px, 18px, 400);
-				white-space: nowrap;
-				text-transform: uppercase;
-
-				@include xlarge {
-					@include setFont(30px, 36px, 400);
-				}
-
-				@include small {
-					@include setFont(14px, 18px, 400);
-				}
-			}
-		}
-
-		&-line {
-			@extend .negativeSkew;
-			width: 86px;
-			height: 4px;
-			background-color: $grey-dark;
-		}
+		margin-bottom: 48px;
 
 		&--center {
 			justify-items: center;
+			text-align: center;
 
-			& .section__heading-text {
+			& .section-lead__heading-text {
 				display: grid;
 				justify-items: center;
 			}
 		}
 	}
 
-	&__description {
+	&__text {
 		display: grid;
-		justify-items: start;
-		gap: 32px;
+		margin-bottom: 32px;
 
-		&-para {
-			@include setFont(14px, 21px, 400);
+		& > span {
+			@include setFont(15px, 18px, 400);
+			white-space: nowrap;
+			text-transform: uppercase;
 
 			@include xlarge {
-				@include setFont(28px, 42px, 400);
+				@include setFont(30px, 36px, 400);
 			}
 		}
+	}
+
+	&__line {
+		@extend .negativeSkew;
+		width: 86px;
+		height: 4px;
+		background-color: $grey-dark;
+	}
+
+	&__desc {
+		display: grid;
+		justify-items: start;
 
 		&--center {
 			justify-items: center;
-
-			& > .section__description-para {
-				text-align: center;
-			}
+			text-align: center;
 		}
+	}
+
+	&__para {
+		margin-bottom: 24px;
+		@include setFont(14px, 21px, 400);
+
+		@include xlarge {
+			@include setFont(28px, 42px, 400);
+		}
+	}
+}
+
+.main-lead {
+	display: grid;
+
+	&--left {
+		align-content: start;
+		justify-items: start;
+	}
+
+	&--center {
+		text-align: center;
+	}
+
+	// Text {{{
+	&__text {
+		margin-bottom: 32px;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+	}
+
+	&__desc {
+	}
+	/// }}}
+
+	// Button
+	&__button {
 	}
 }
 
@@ -171,10 +195,6 @@
 	@include xlarge {
 		@include setFont(112px, 136px, 700);
 	}
-
-	@include small {
-		@include setFont(48px, 60px, 700);
-	}
 }
 
 .heading2 {
@@ -183,10 +203,6 @@
 	@include xlarge {
 		@include setFont(64px, 80px, 700);
 	}
-
-	@include small {
-		@include setFont(28px, 32px, 700);
-	}
 }
 
 .heading3 {
@@ -194,9 +210,5 @@
 
 	@include xlarge {
 		@include setFont(36px, 42px, 700);
-	}
-
-	@include small {
-		@include setFont(16px, 18px, 700);
 	}
 }

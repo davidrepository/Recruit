@@ -2,42 +2,40 @@
 @import './system.scss';
 @import './reset.scss';
 
+@import './components/site-bar.scss';
 @import './components/header.scss';
-@import './components/hero.scss';
 @import './components/about-us.scss';
 @import './components/portfolio.scss';
 @import './components/quotation.scss';
 @import './components/latest-news.scss';
 @import './components/trusted.scss';
 
-body {
-	.sidebar {
-		z-index: -1;
-		visibility: hidden;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		transform: translateX(100%);
+.side-bar {
+	z-index: -1;
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	transform: translateX(100%);
 
-		background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.6);
 
-		transition: background-color 0.2s, transform 0.2s;
-	}
+	transition: background-color 0.2s, transform 0.2s;
 
-	&.sidebar-in {
+	&--in {
 		overflow: hidden;
 
-		.sidebar {
+		.side-bar {
 			z-index: 2;
 			visibility: visible;
 			transform: translateX(0);
 		}
 	}
 
-	&.sidebar-out {
-		.sidebar {
+	&--out {
+		.side-bar {
 			z-index: 2;
 			visibility: visible;
 			transform: translateX(100%);
@@ -79,6 +77,12 @@ body {
 			height: 240px;
 			background-color: $grey-light;
 			margin-top: 192px;
+
+			@include large {
+				// width: 150%;
+				width: 360px;
+				height: 360px;
+			}
 		}
 
 		& .block2 {
@@ -87,10 +91,15 @@ body {
 			width: calc(100% + 150px);
 			margin-top: 2680px;
 			background-color: $grey-light;
+
+			@include large {
+				height: 630px;
+				width: 630px;
+			}
 		}
 	}
 
-	& > * {
-		z-index: 2;
-	}
+	// & > * {
+	// 	z-index: 2;
+	// }
 }

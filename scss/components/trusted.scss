@@ -7,9 +7,12 @@
 	margin-bottom: 10vw;
 	position: relative;
 	justify-content: center;
-	padding: 260px 40px;
-	gap: 80px;
+	padding: 250px 40px;
 	overflow: hidden;
+
+	@include small {
+		padding: 125px 40px;
+	}
 
 	& .section__heading {
 		@include small {
@@ -17,7 +20,7 @@
 		}
 	}
 
-	$negativeDistance: -120px;
+	$negativeDistance: -80px;
 	&:before,
 	&:after {
 		@extend .negativeSkew;
@@ -37,6 +40,10 @@
 		margin-bottom: $negativeDistance;
 		z-index: 1;
 		left: 0;
+
+		@include xlarge {
+			margin-bottom: $negativeDistance * 2;
+		}
 	}
 
 	&:after {
@@ -44,17 +51,28 @@
 		top: 100%;
 		margin-top: $negativeDistance;
 		transform-origin: bottom;
+
+		@include xlarge {
+			margin-top: $negativeDistance * 2;
+		}
 	}
 
 	&__company {
 		display: grid;
+		margin-top: 32px;
+
+		justify-content: center;
 		align-items: center;
 		justify-items: center;
-		justify-content: center;
-		grid-template-columns: repeat(auto-fit, minmax(auto, 160px));
-		gap: 32px;
+		grid-template-columns: repeat(auto-fit, minmax(auto, 200px));
 
-		& img {
+		& > img {
+			margin: 16px;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
 			@include large {
 				height: auto;
 				width: 100%;

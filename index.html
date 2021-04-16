@@ -14,47 +14,8 @@
 		<link rel="stylesheet" href="css/index.css" />
 	</head>
 	<body>
-		<div class="sidebar"></div>
+		<div class="side-bar"></div>
 		<!-- ///////////// HEADER ///////////// -->
-		<header class="header">
-			<div class="header__container">
-				<img class="header__logo" src="./img/logo.svg" alt="" />
-				<img
-					class="header__hamburger"
-					src="./img/hamburger.svg"
-					alt=""
-				/>
-				<ul class="header__menu para">
-					<li>
-						<a
-							href="#"
-							class="header__menu-link header__menu-link--active"
-							><span>Home</span></a
-						>
-					</li>
-					<li>
-						<a href="#" class="header__menu-link"
-							><span>Services</span></a
-						>
-					</li>
-					<li>
-						<a href="#" class="header__menu-link"
-							><span>About us</span></a
-						>
-					</li>
-					<li>
-						<a href="#" class="header__menu-link"
-							><span>Portfolio</span></a
-						>
-					</li>
-					<li>
-						<a href="#" class="header__menu-link"
-							><span>Contact</span></a
-						>
-					</li>
-				</ul>
-			</div>
-		</header>
 
 		<!-- ///////////// MAIN ///////////// -->
 		<main class="main">
@@ -82,30 +43,74 @@
 				<div class="cell"></div>
 				<div class="cell"></div>
 			</div>
-			<section class="hero">
-				<div class="hero__content-container">
-					<div class="hero__content-left">
-						<div class="hero__content-text">
-							<h1 class="hero__content-heading heading1">
+			<header class="site-bar">
+				<div class="site-bar__container">
+					<img class="site-bar__logo" src="./img/logo.svg" alt="" />
+					<img
+						class="site-bar__hamburger"
+						src="./img/hamburger.svg"
+						alt=""
+					/>
+					<ul class="menu para">
+						<li>
+							<a
+								href="#section0"
+								class="menu__link menu__link--active navigate"
+								><span>Home</span></a
+							>
+						</li>
+						<li>
+							<a href="#" class="menu__link navigate"
+								><span>Services</span></a
+							>
+						</li>
+						<li>
+							<a
+								href="#section1"
+								class="navigate menu__link navigate"
+								><span>About us</span></a
+							>
+						</li>
+						<li>
+							<a href="#section2" class="menu__link navigate"
+								><span>Portfolio</span></a
+							>
+						</li>
+						<li>
+							<a href="#" class="menu__link navigate"
+								><span>Contact</span></a
+							>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<section id="section0" class="header">
+				<div class="header__content-container">
+					<div class="header__content-left main-lead main-lead--left">
+						<div class="main-lead__text">
+							<h1 class="main-lead__title heading1">
 								Car showroom and service building
 							</h1>
-							<ul class="hero__content-list para">
+							<ul class="main-lead__desc para">
 								<li>Location: Poland, Wćrocław</li>
 								<li>Design: 2013</li>
 							</ul>
 						</div>
-						<a href="#" class="button md primary">
+						<a
+							href="#"
+							class="main-lead__button button button--md button--primary"
+						>
 							<span>Read me</span>
 						</a>
 					</div>
-					<div class="hero__content-right">
-						<div class="hero__content-line"></div>
+					<div class="header__content-right">
+						<div class="header__content-line"></div>
 					</div>
 				</div>
 
-				<div class="hero__footer">
-					<div class="hero__footer-container">
-						<div class="hero__footer-language para">
+				<div class="header__footer">
+					<div class="header__footer-container">
+						<div class="header__footer-language para">
 							<ul>
 								<li>Pl</li>
 								<li></li>
@@ -113,12 +118,15 @@
 							</ul>
 						</div>
 
-						<div class="hero__footer-mouse">
+						<a
+							href="#section1"
+							class="header__footer-mouse navigate"
+						>
 							<img src="./img/mouse.svg" alt="" />
-						</div>
+						</a>
 
-						<div class="hero__footer-story">
-							<div class="button md ghost origin">
+						<div class="header__footer-story">
+							<div class="button button--md button--ghost origin">
 								<img src="./img/play.svg" alt="" />
 							</div>
 							<span class="para">Our story</span>
@@ -126,22 +134,24 @@
 					</div>
 				</div>
 			</section>
-			<section class="about-us" data-aos="fade-in">
+			<section id="section1" class="about-us" data-aos="fade-in">
 				<img src="./img/structure.png" alt="" data-aos="fade-in" />
 				<div class="about-us__container">
-					<div class="about-us__info section">
-						<div class="section__heading section__heading--center">
-							<div class="section__heading-text">
+					<div class="about-us__info section-lead">
+						<div
+							class="section-lead__heading section-lead__heading--center"
+						>
+							<div class="section-lead__text">
 								<h2 class="heading1">Our Values</h2>
 								<span>Thanks we believe</span>
 							</div>
-							<div class="section__heading-line"></div>
+							<div class="section-lead__line"></div>
 						</div>
 
 						<div
-							class="section__description section__description--center"
+							class="section-lead__desc section-lead__desc--center"
 						>
-							<p class="section__description-para">
+							<p class="section-lead__para">
 								Lorem ipsum dolor sit amet, consectetur
 								adipiscing elit. Curabitur erat mi, bibendum nec
 								egestas pharetra, aliquam sit amet tortor. Donec
@@ -151,7 +161,7 @@
 								rutrum. Praesent sit amet sollicitudin orci, sed
 								sagittis turpis.
 							</p>
-							<a href="#" class="button lg ghost"
+							<a href="#" class="button button--lg button--ghost"
 								><span>About us</span></a
 							>
 						</div>
@@ -163,18 +173,18 @@
 					</div>
 				</div>
 			</section>
-			<section class="portfolio" data-aos="fade-in">
+			<section id="section2" class="portfolio" data-aos="fade-in">
 				<div class="portfolio__info">
-					<div class="section__heading">
-						<div class="section__heading-text">
+					<div class="section-lead__heading">
+						<div class="section-lead__text">
 							<h2 class="heading1">Portfolio</h2>
 							<span>Our vision</span>
 						</div>
-						<div class="section__heading-line"></div>
+						<div class="section-lead__line"></div>
 					</div>
 
-					<div class="section__description">
-						<p class="section__description-para">
+					<div class="section-lead__desc">
+						<p class="section-lead__para">
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit. Curabitur erat mi, bibendum nec egestas
 							pharetra, aliquam sit amet tortor. Donec mollis
@@ -183,7 +193,7 @@
 							Nullam aliquet dignissim rutrum. Praesent sit amet
 							sollicitudin orci, sed sagittis turpis.
 						</p>
-						<a href="#" class="button lg secondary"
+						<a href="#" class="button button--lg button--secondary"
 							><span>About us</span></a
 						>
 					</div>
@@ -206,9 +216,9 @@
 					</div>
 				</div>
 			</section>
-			<section class="quotation" data-aos="fade-in">
+			<section id="section3" class="quotation" data-aos="fade-in">
 				<div class="quotation__container">
-					<div>
+					<div class="quotation__inner">
 						<h3 class="heading2">Lorem ipsum</h3>
 						<div class="quotation__quot">
 							<p class="para">
@@ -221,13 +231,15 @@
 					</div>
 				</div>
 			</section>
-			<section class="latest-news">
-				<div class="section__heading section__heading--center">
-					<div class="section__heading-text">
+			<section id="section4" class="latest-news section-lead">
+				<div
+					class="section-lead__heading section-lead__heading--center"
+				>
+					<div class="section-lead__text">
 						<h1 class="heading1">Latest news</h1>
 						<span>Keep up to date</span>
 					</div>
-					<div class="section__heading-line"></div>
+					<div class="section-lead__line"></div>
 				</div>
 
 				<div class="latest-news__content">
@@ -239,16 +251,12 @@
 					<div class="latest-news__body">
 						<div>
 							<div class="latest-news__body-container">
-								<div
-									class="latest-news__body-container-text section__description"
-								>
-									<div
-										class="latest-news__body-container-text-t"
-									>
-										<h3 class="heading2">
+								<div class="section-lead__desc main-lead">
+									<div class="main-lead__text">
+										<h3 class="main-lead__title heading2">
 											Korean Culture Festival in Kraków
 										</h3>
-										<p class="para">
+										<p class="para main-lead__desc">
 											April 23th, 2018 we had the pleasure
 											of taking part in the Festival of
 											Korean Culture in Krakow. We met
@@ -262,7 +270,9 @@
 											welcome.
 										</p>
 									</div>
-									<a href="#" class="button md secondary"
+									<a
+										href="#"
+										class="main-lead__button button button--md button--secondary"
 										><span>Read me</span></a
 									>
 								</div>
@@ -290,13 +300,15 @@
 					</div>
 				</div>
 			</section>
-			<section class="trusted">
-				<div class="section__heading section__heading--center">
-					<div class="section__heading-text">
+			<section id="section5" class="trusted">
+				<div
+					class="section-lead__heading section-lead__heading--center"
+				>
+					<div class="section-lead__text">
 						<h2 class="heading1">We were trusted</h2>
 						<span>Our customers are important to us</span>
 					</div>
-					<div class="section__heading-line"></div>
+					<div class="section-lead__line"></div>
 				</div>
 				<div class="trusted__company grid">
 					<img src="./img/company/image 8.png" alt="" />
@@ -313,8 +325,8 @@
 		<footer class="footer"></footer>
 
 		<script
-			src="https://code.jquery.com/jquery-3.6.0.slim.js"
-			integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>

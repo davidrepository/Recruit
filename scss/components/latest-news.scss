@@ -2,7 +2,17 @@
 	display: grid;
 	align-self: center;
 	margin-bottom: 250px;
-	gap: 80px;
+
+	@include small {
+		margin-bottom: 125px;
+
+		& .main-lead {
+			justify-items: center;
+			&__text {
+				text-align: center;
+			}
+		}
+	}
 
 	@include large {
 		margin-bottom: 500px;
@@ -14,13 +24,14 @@
 		display: grid;
 		grid-template-columns: minmax(auto, 1400px);
 		justify-content: center;
+		margin-top: 26px;
 
 		@include large {
 			grid-template-columns: minmax(auto, 1800px);
 		}
 
 		@include small {
-			gap: 32px;
+			// gap: 32px;
 			padding: 0;
 		}
 	}
@@ -33,7 +44,7 @@
 		}
 
 		@include small {
-			padding: 0 50px;
+			padding: 0 40px;
 		}
 
 		& > div {
@@ -48,10 +59,13 @@
 
 		&-container {
 			display: grid;
-			gap: 56px;
 			position: relative;
 			grid-template-columns: 1fr 65px;
 			grid-column: 2 / span 1;
+
+			& .main-lead {
+				padding-right: 40px;
+			}
 
 			@include xlarge {
 				gap: 112px;
@@ -60,37 +74,10 @@
 			@include small {
 				grid-column: 1 / span 2;
 				grid-template-columns: 1fr;
-			}
 
-			&-text {
-				display: grid;
-				justify-items: start;
-				align-content: start;
-
-				@include small {
-					justify-items: center;
-					justify-self: center;
-					max-width: 600px;
+				& .main-lead {
+					padding-right: 0;
 				}
-
-				&-t {
-					display: grid;
-					gap: 20px;
-
-					@include small {
-						justify-items: center;
-						text-align: center;
-					}
-
-					& > p {
-						@include small {
-							text-align: center;
-						}
-					}
-				}
-			}
-
-			& p {
 			}
 		}
 	}
@@ -126,6 +113,7 @@
 			z-index: 1;
 			top: 0;
 			left: 0;
+			margin-bottom: 56px;
 
 			@include large {
 				height: 430px;
@@ -149,7 +137,6 @@
 		align-content: start;
 		grid-auto-flow: row;
 		width: 150px;
-		gap: 32px;
 
 		@include xlarge {
 			width: 250px;
@@ -159,12 +146,21 @@
 			grid-row: 1;
 			grid-template-columns: repeat(2, 1fr);
 			width: auto;
+
+			margin-bottom: 56px;
+
+			&-item:nth-child(odd) {
+				margin-right: 32px;
+			}
+			&-item:nth-child(1),
+			&-item:nth-child(2) {
+				margin-bottom: 32px;
+			}
 		}
 
 		&-item {
-			// font-size: 14px;
+			margin-bottom: 32px;
 			@include setFont(14px, 21px, 700);
-
 			position: relative;
 			text-decoration: underline;
 
@@ -174,11 +170,12 @@
 
 			&--active {
 				font-weight: 700;
+
 				&:before {
 					content: '';
 					position: absolute;
 					top: 100%;
-					margin-top: 12px;
+					margin-top: 8px;
 					left: 0;
 					width: 40px;
 					height: 4px;

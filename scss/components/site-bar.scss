@@ -1,0 +1,102 @@
+.site-bar {
+	display: grid;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	height: $header-height;
+	align-content: center;
+	transition: background-color 0.2s, height 0.2s;
+	padding: 0 48px;
+
+	&--active {
+		background-color: rgba(0, 0, 0, 0.8);
+		height: 100px;
+	}
+
+	&__container {
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+	}
+
+	&__hamburger {
+		display: none;
+		width: 32px;
+
+		@include small {
+			display: block;
+		}
+	}
+}
+
+.menu {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	justify-content: start;
+
+	li:last-of-type &__link {
+		border-right: none;
+	}
+
+	@include small {
+		display: none;
+	}
+
+	&__link {
+		@extend .negativeSkew;
+		display: block;
+		height: 18px;
+		line-height: 18px;
+		padding: 0 32px;
+		color: $white;
+		border-right: 1px solid $black;
+		transition: color 0.2s;
+
+		@include xlarge {
+			height: 28px;
+			line-height: 28px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			background-color: #000;
+			width: 100%;
+			height: 0px;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: height 0.2s, opacity 0.2s;
+		}
+
+		&:hover {
+			&::before {
+				height: 28px;
+			}
+		}
+
+		&--active {
+			height: 28px;
+			line-height: 28px;
+			border: 1px solid $black;
+
+			@include xlarge {
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+
+		// Childrens
+		& span {
+			@extend .positiveSkew;
+			display: block;
+		}
+	}
+}
