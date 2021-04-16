@@ -6,19 +6,19 @@
 	background-color: $grey-light;
 	padding: 65px 0;
 	padding-left: 195px;
-
-	@include large {
-		// padding: 0;
-		justify-content: center;
-		grid-template-columns: minmax(auto, 1800px);
-	}
+	grid-template-columns: minmax(auto, 1800px);
+	justify-content: center;
 
 	@include xlarge {
-		padding: 130px 0;
-		padding-left: 390px;
-		justify-content: start;
-		grid-template-columns: none;
+		padding-left: 0;
 	}
+
+	// @include xlarge {
+	// 	grid-template-columns: minmax(auto, 2000px);
+	// 	justify-content: center;
+	// 	padding-left: 0;
+	// 	// grid-template-columns: none;
+	// }
 
 	@include small {
 		padding: 0;
@@ -44,6 +44,8 @@
 		}
 
 		@include small {
+			justify-self: center;
+			justify-items: center;
 			max-width: none;
 			width: 100%;
 			padding: 0 40px;
@@ -65,11 +67,6 @@
 					text-align: center;
 				}
 			}
-		}
-
-		@include small {
-			justify-self: center;
-			justify-items: center;
 		}
 	}
 

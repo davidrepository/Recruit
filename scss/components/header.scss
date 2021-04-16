@@ -13,25 +13,23 @@
 }
 
 .header {
+	$pl: 195px;
+	$pr: 255px;
 	z-index: 1;
 	display: grid;
 	position: relative;
 	width: 100vw;
 	padding: 0 80px;
-	padding-left: 195px;
-	padding-right: 220px;
+	padding-left: $pl;
+	padding-right: $pr;
 
 	height: 100vh;
 	justify-content: center;
-	grid-template-columns: minmax(auto, 1400px);
+	grid-template-columns: minmax(auto, 1800px);
 
 	@include small {
 		padding-left: 40px;
 		padding-right: 40px;
-	}
-
-	@include xlarge {
-		grid-template-columns: minmax(auto, 2000px);
 	}
 
 	// Background
@@ -51,8 +49,6 @@
 
 	&__content {
 		&-container {
-			$pl: 195px;
-			$pr: 255px;
 			width: 100%;
 			display: grid;
 			grid-auto-flow: column;
@@ -64,7 +60,7 @@
 
 			@include small {
 				padding: 0 40px;
-				bottom: 30%;
+				margin-bottom: 30vh;
 			}
 
 			@include small {
@@ -76,8 +72,8 @@
 				}
 
 				& .heading1 {
-					font-size: 44px;
-					line-height: 52px;
+					font-size: 36px;
+					line-height: 40px;
 				}
 			}
 		}

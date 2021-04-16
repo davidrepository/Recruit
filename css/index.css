@@ -217,7 +217,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 10;
   height: 120px;
   align-content: center;
   transition: background-color 0.2s, height 0.2s;
@@ -319,10 +319,10 @@ li:last-of-type .menu__link {
   width: 100vw;
   padding: 0 80px;
   padding-left: 195px;
-  padding-right: 220px;
+  padding-right: 255px;
   height: 100vh;
   justify-content: center;
-  grid-template-columns: minmax(auto, 1400px);
+  grid-template-columns: minmax(auto, 1800px);
   background: url("../img/bg-hero.png") no-repeat;
   background-size: cover;
   background-position: center;
@@ -331,11 +331,6 @@ li:last-of-type .menu__link {
   .header {
     padding-left: 40px;
     padding-right: 40px;
-  }
-}
-@media (min-width: 2400px) {
-  .header {
-    grid-template-columns: minmax(auto, 2000px);
   }
 }
 .header:before {
@@ -360,7 +355,7 @@ li:last-of-type .menu__link {
 @media (max-width: 1024px) {
   .header__content-container {
     padding: 0 40px;
-    bottom: 30%;
+    margin-bottom: 30vh;
   }
 }
 @media (max-width: 1024px) {
@@ -372,8 +367,8 @@ li:last-of-type .menu__link {
     display: none;
   }
   .header__content-container .heading1 {
-    font-size: 44px;
-    line-height: 52px;
+    font-size: 36px;
+    line-height: 40px;
   }
 }
 .header__content-left {
@@ -607,19 +602,12 @@ li:last-of-type .menu__link {
   background-color: #f4f4f4;
   padding: 65px 0;
   padding-left: 195px;
-}
-@media (min-width: 1440px) {
-  .portfolio {
-    justify-content: center;
-    grid-template-columns: minmax(auto, 1800px);
-  }
+  grid-template-columns: minmax(auto, 1800px);
+  justify-content: center;
 }
 @media (min-width: 2400px) {
   .portfolio {
-    padding: 130px 0;
-    padding-left: 390px;
-    justify-content: start;
-    grid-template-columns: none;
+    padding-left: 0;
   }
 }
 @media (max-width: 1024px) {
@@ -649,6 +637,8 @@ li:last-of-type .menu__link {
 }
 @media (max-width: 1024px) {
   .portfolio__info {
+    justify-self: center;
+    justify-items: center;
     max-width: none;
     width: 100%;
     padding: 0 40px;
@@ -664,12 +654,6 @@ li:last-of-type .menu__link {
   }
   .portfolio__info .section-lead__para {
     text-align: center;
-  }
-}
-@media (max-width: 1024px) {
-  .portfolio__info {
-    justify-self: center;
-    justify-items: center;
   }
 }
 .portfolio__building {
