@@ -1,14 +1,14 @@
 @keyframes mouseInfinite {
 	0% {
-		transform: translateY(-10%);
+		transform: translateY(0%);
 	}
 
 	50% {
-		transform: translateY(110%);
+		transform: translateY(50%);
 	}
 
 	100% {
-		transform: translateY(-10%);
+		transform: translateY(0%);
 	}
 }
 
@@ -88,34 +88,6 @@
 
 			@include xlarge {
 				max-width: 1200px;
-			}
-		}
-
-		&-text {
-			display: grid;
-			align-content: start;
-			gap: 20px;
-
-			@include small {
-				justify-items: center;
-			}
-		}
-
-		&-heading {
-			@include small {
-				text-align: center;
-				width: auto;
-			}
-
-			@media (max-width: 400px) {
-				font-size: 40px;
-				line-height: 48px;
-			}
-		}
-
-		&-list {
-			@include small {
-				text-align: center;
 			}
 		}
 

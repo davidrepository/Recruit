@@ -38,7 +38,6 @@
 		display: grid;
 		justify-content: end;
 		grid-auto-flow: column;
-		gap: 16px;
 
 		@include small {
 			justify-content: center;
@@ -52,6 +51,11 @@
 		width: 20px;
 		border: 1px solid $black;
 		box-sizing: border-box;
+		margin-right: 16px;
+
+		&:last-child {
+			margin-right: 0;
+		}
 
 		&-active {
 			background-color: $black;

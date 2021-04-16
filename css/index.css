@@ -303,13 +303,13 @@ li:last-of-type .menu__link {
 
 @keyframes mouseInfinite {
   0% {
-    transform: translateY(-10%);
+    transform: translateY(0%);
   }
   50% {
-    transform: translateY(110%);
+    transform: translateY(50%);
   }
   100% {
-    transform: translateY(-10%);
+    transform: translateY(0%);
   }
 }
 .header {
@@ -383,33 +383,6 @@ li:last-of-type .menu__link {
 @media (min-width: 2400px) {
   .header__content-left {
     max-width: 1200px;
-  }
-}
-.header__content-text {
-  display: grid;
-  align-content: start;
-  gap: 20px;
-}
-@media (max-width: 1024px) {
-  .header__content-text {
-    justify-items: center;
-  }
-}
-@media (max-width: 1024px) {
-  .header__content-heading {
-    text-align: center;
-    width: auto;
-  }
-}
-@media (max-width: 400px) {
-  .header__content-heading {
-    font-size: 40px;
-    line-height: 48px;
-  }
-}
-@media (max-width: 1024px) {
-  .header__content-list {
-    text-align: center;
   }
 }
 @media (max-width: 1024px) {
@@ -568,7 +541,6 @@ li:last-of-type .menu__link {
   display: grid;
   justify-content: end;
   grid-auto-flow: column;
-  gap: 16px;
 }
 @media (max-width: 1024px) {
   .about-us__dots {
@@ -580,6 +552,10 @@ li:last-of-type .menu__link {
   width: 20px;
   border: 1px solid #000;
   box-sizing: border-box;
+  margin-right: 16px;
+}
+.about-us__dot:last-child {
+  margin-right: 0;
 }
 .about-us__dot-active {
   background-color: #000;
