@@ -1248,8 +1248,15 @@ li:last-of-type .menu__link {
 .main .grid__block3 {
   height: 500px;
   width: 500px;
-  background-color: #8b8b8b;
-  margin-top: 2600px;
+  background-color: #f4f4f4;
+  margin-top: 2200px;
+}
+@media (max-width: 1024px) {
+  .main .grid__block3 {
+    width: 300px;
+    height: 300px;
+    background-color: #8b8b8b;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
