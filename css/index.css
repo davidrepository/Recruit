@@ -906,7 +906,7 @@ li:last-of-type .menu__link {
     text-align: center;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 2400px) {
   .latest-news {
     margin-bottom: 500px;
   }
