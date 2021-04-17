@@ -179,7 +179,7 @@
 			margin-right: 50px;
 
 			@include small {
-				margin-right: 30px;
+				margin-right: 15px;
 			}
 
 			&:before {
@@ -195,7 +195,7 @@
 				transform-origin: top;
 
 				@include small {
-					left: -40px;
+					left: -20px;
 				}
 
 				@include xlarge {

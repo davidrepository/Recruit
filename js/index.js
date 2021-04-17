@@ -76,7 +76,7 @@ $(() => {
 		block3_1,
 		{ y: 0 },
 		{
-			y: 2000,
+			y: 3000,
 			duration: 1,
 			scrollTrigger: {
 				trigger: '.grid__block3-1',

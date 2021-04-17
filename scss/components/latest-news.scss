@@ -168,6 +168,13 @@
 				@include setFont(28px, 42px, 700);
 			}
 
+			@include small {
+				&:nth-child(3),
+				&:nth-child(4) {
+					margin-bottom: 0;
+				}
+			}
+
 			&--active {
 				font-weight: 700;
 
