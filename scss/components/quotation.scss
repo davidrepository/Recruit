@@ -51,11 +51,12 @@
 		background-color: $black;
 		width: 70%;
 		transform-origin: top;
-		padding: 0 200px;
+		padding: 0 100px;
 		padding-bottom: 56px;
 		padding-top: 70px;
 
 		@include xlarge {
+			padding: 0 200px;
 			padding-top: 200px;
 			padding-bottom: 180px;
 		}
@@ -76,8 +77,13 @@
 		align-items: center;
 		justify-items: center;
 
-		& > h3 {
-			margin-right: 100px;
+		& > .heading2 {
+			// margin-right: 100px;
+			margin-right: 80px;
+
+			@include small {
+				margin-right: 0;
+			}
 		}
 
 		@include small {
@@ -99,25 +105,15 @@
 	&__quot {
 		display: grid;
 		justify-items: end;
-		padding: 0 40px;
-		max-width: 648px;
+		max-width: 360px;
 
 		@include small {
 			padding: 0;
 		}
 
-		// @include large {
-		// 	padding: 0 60px;
-		// }
-
 		@include xlarge {
-			// padding: 0 160px;
-			max-width: 648px;
+			max-width: 720px;
 		}
-
-		// @include xlarge {
-		// 	padding: 0 160px;
-		// }
 
 		& > p {
 			position: relative;

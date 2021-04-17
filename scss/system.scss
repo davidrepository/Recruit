@@ -44,14 +44,12 @@
 	align-content: center;
 	font-size: 16px;
 	font-weight: 600;
+	transform: skew(-$skew);
+	transform-origin: top;
 
 	@include xlarge {
 		font-size: 18px;
 	}
-
-	transform: skew(-$skew);
-
-	transform-origin: bottom;
 
 	&--md {
 		height: 40px;

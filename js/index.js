@@ -5,6 +5,7 @@ $(() => {
 	const block1 = document.querySelector('.grid__block1');
 	const block2 = document.querySelector('.grid__block2');
 	const block3 = document.querySelector('.grid__block3');
+	const block3_1 = document.querySelector('.grid__block3-1');
 
 	sections.forEach(section => {
 		gsap.fromTo(
@@ -65,7 +66,22 @@ $(() => {
 			scrollTrigger: {
 				trigger: '.grid__block3',
 				start: 'top 20%',
-				end: '+=' + window.innerHeight * 20,
+				end: '+=' + window.innerHeight * 16,
+				scrub: 1,
+			},
+		},
+	);
+
+	gsap.fromTo(
+		block3_1,
+		{ y: 0 },
+		{
+			y: 2000,
+			duration: 1,
+			scrollTrigger: {
+				trigger: '.grid__block3-1',
+				start: 'top 20%',
+				end: '+=' + window.innerHeight * 6,
 				scrub: 1,
 			},
 		},

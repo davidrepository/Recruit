@@ -93,8 +93,6 @@
 
 			@media (max-width: 1360px) {
 				right: -100px;
-				// right: -40vw;
-				// right: -200px;
 			}
 
 			@media (max-width: 1245px) {
@@ -103,6 +101,10 @@
 
 			@media (max-width: 1170px) {
 				right: -380px;
+			}
+
+			@media (min-width: 1361px) and (max-width: 2494px) {
+				right: 0;
 			}
 
 			@include small {
@@ -139,6 +141,7 @@
 
 			@media (max-width: 1170px) {
 				left: 20%;
+				padding-right: 400px;
 			}
 
 			@include small {
@@ -153,8 +156,7 @@
 			& > div {
 				display: grid;
 				white-space: nowrap;
-				// max-width: 300px;
-				max-width: 60%;
+				max-width: 80%;
 				transform: skew($skew);
 
 				@include small {

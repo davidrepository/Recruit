@@ -27,7 +27,7 @@
   font-size: 16px;
   font-weight: 600;
   transform: skew(-22deg);
-  transform-origin: bottom;
+  transform-origin: top;
 }
 @media (min-width: 2400px) {
   .button {
@@ -498,6 +498,7 @@ li:last-of-type .menu__link {
   padding: 0 !important;
   justify-content: center;
   margin-bottom: 8px;
+  margin-left: 32px;
 }
 
 .about-us {
@@ -680,6 +681,11 @@ li:last-of-type .menu__link {
     right: -380px;
   }
 }
+@media (min-width: 1361px) and (max-width: 2494px) {
+  .portfolio__building-wrapper {
+    right: 0;
+  }
+}
 @media (max-width: 1024px) {
   .portfolio__building-wrapper {
     position: relative;
@@ -714,6 +720,7 @@ li:last-of-type .menu__link {
 @media (max-width: 1170px) {
   .portfolio__building-info {
     left: 20%;
+    padding-right: 400px;
   }
 }
 @media (max-width: 1024px) {
@@ -729,7 +736,7 @@ li:last-of-type .menu__link {
 .portfolio__building-info > div {
   display: grid;
   white-space: nowrap;
-  max-width: 60%;
+  max-width: 80%;
   transform: skew(22deg);
 }
 @media (max-width: 1024px) {
@@ -793,12 +800,13 @@ li:last-of-type .menu__link {
   background-color: #000;
   width: 70%;
   transform-origin: top;
-  padding: 0 200px;
+  padding: 0 100px;
   padding-bottom: 56px;
   padding-top: 70px;
 }
 @media (min-width: 2400px) {
   .quotation__container {
+    padding: 0 200px;
     padding-top: 200px;
     padding-bottom: 180px;
   }
@@ -818,8 +826,13 @@ li:last-of-type .menu__link {
   align-items: center;
   justify-items: center;
 }
-.quotation__inner > h3 {
-  margin-right: 100px;
+.quotation__inner > .heading2 {
+  margin-right: 80px;
+}
+@media (max-width: 1024px) {
+  .quotation__inner > .heading2 {
+    margin-right: 0;
+  }
 }
 @media (max-width: 1024px) {
   .quotation__inner {
@@ -838,8 +851,7 @@ li:last-of-type .menu__link {
 .quotation__quot {
   display: grid;
   justify-items: end;
-  padding: 0 40px;
-  max-width: 648px;
+  max-width: 360px;
 }
 @media (max-width: 1024px) {
   .quotation__quot {
@@ -848,7 +860,7 @@ li:last-of-type .menu__link {
 }
 @media (min-width: 2400px) {
   .quotation__quot {
-    max-width: 648px;
+    max-width: 720px;
   }
 }
 .quotation__quot > p {
@@ -1141,7 +1153,6 @@ li:last-of-type .menu__link {
 }
 .trusted__company {
   display: grid;
-  margin-top: 32px;
   justify-content: center;
   align-items: center;
   justify-items: center;
@@ -1250,13 +1261,21 @@ li:last-of-type .menu__link {
   width: 500px;
   background-color: #f4f4f4;
   margin-top: 2200px;
+  display: grid;
+  justify-items: start;
+  align-items: end;
+  overflow: hidden;
 }
 @media (max-width: 1024px) {
   .main .grid__block3 {
     width: 300px;
     height: 300px;
-    background-color: #8b8b8b;
   }
+}
+.main .grid__block3-1 {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /*# sourceMappingURL=index.css.map */
