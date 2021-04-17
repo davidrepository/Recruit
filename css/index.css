@@ -1124,7 +1124,7 @@ li:last-of-type .menu__link {
 .trusted:before, .trusted:after {
   content: "";
   position: absolute;
-  width: 500px;
+  width: 620px;
   height: 400px;
   transform-origin: top;
   background-color: #fff;
@@ -1136,24 +1136,24 @@ li:last-of-type .menu__link {
 }
 .trusted:before {
   bottom: 100%;
-  margin-bottom: -80px;
+  margin-bottom: -100px;
   z-index: 1;
   left: 0;
 }
 @media (min-width: 2400px) {
   .trusted:before {
-    margin-bottom: -160px;
+    margin-bottom: -200px;
   }
 }
 .trusted:after {
   right: 0;
   top: 100%;
-  margin-top: -80px;
+  margin-top: -100px;
   transform-origin: bottom;
 }
 @media (min-width: 2400px) {
   .trusted:after {
-    margin-top: -160px;
+    margin-top: -200px;
   }
 }
 .trusted__company {

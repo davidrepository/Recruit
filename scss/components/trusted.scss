@@ -20,13 +20,13 @@
 		}
 	}
 
-	$negativeDistance: -80px;
+	$negativeDistance: -100px;
 	&:before,
 	&:after {
 		@extend .negativeSkew;
 		content: '';
 		position: absolute;
-		width: 500px;
+		width: 620px;
 		height: 400px;
 		transform-origin: top;
 		background-color: #fff;
