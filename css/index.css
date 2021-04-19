@@ -987,7 +987,7 @@ li:last-of-type .menu__link {
 }
 @media (max-width: 1024px) {
   .latest-news__content {
-    padding: 0;
+    margin-top: 0;
   }
 }
 .latest-news__body {

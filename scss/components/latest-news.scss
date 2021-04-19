@@ -25,7 +25,7 @@
 		grid-template-columns: minmax(auto, 1800px);
 
 		@include small {
-			padding: 0;
+			margin-top: 0;
 		}
 	}
 
