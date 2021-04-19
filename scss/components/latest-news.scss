@@ -18,20 +18,13 @@
 		margin-bottom: 500px;
 	}
 
-	// padding: 300px 0;
-
 	&__content {
 		display: grid;
-		grid-template-columns: minmax(auto, 1400px);
 		justify-content: center;
 		margin-top: 26px;
-
-		@include large {
-			grid-template-columns: minmax(auto, 1800px);
-		}
+		grid-template-columns: minmax(auto, 1800px);
 
 		@include small {
-			// gap: 32px;
 			padding: 0;
 		}
 	}
@@ -44,7 +37,7 @@
 		}
 
 		@include small {
-			padding: 0 40px;
+			padding: 0 $mobile-padding;
 		}
 
 		& > div {
@@ -83,8 +76,8 @@
 	}
 
 	&__building {
+		@extend .negativeSkew;
 		height: 100%;
-		transform: skew(-$skew);
 		transform-origin: top;
 		overflow: hidden;
 
@@ -95,9 +88,8 @@
 		}
 
 		& img {
-			// @extend .ske
+			@extend .positiveSkew;
 			height: 100%;
-			transform: skew($skew);
 			transform-origin: top;
 
 			@include small {
@@ -115,19 +107,19 @@
 			left: 0;
 			margin-bottom: 56px;
 
+			@include small {
+				position: relative;
+				height: auto;
+				width: 100%;
+				height: auto !important;
+			}
+
 			@include large {
 				height: 430px;
 			}
 
 			@include xlarge {
 				height: 120%;
-			}
-
-			@include small {
-				position: relative;
-				height: auto;
-				width: 100%;
-				height: auto !important;
 			}
 		}
 	}
@@ -159,8 +151,8 @@
 		}
 
 		&-item {
-			margin-bottom: 32px;
 			@include setFont(14px, 21px, 700);
+			margin-bottom: 32px;
 			position: relative;
 			text-decoration: underline;
 

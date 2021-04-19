@@ -2,16 +2,16 @@
 	z-index: -1;
 	background-color: $grey-light;
 	display: grid;
-
-	grid-template-columns: minmax(auto, 1200px);
-	margin-bottom: 10vw;
 	position: relative;
-	justify-content: center;
 	padding: 250px 40px;
 	overflow: hidden;
 
 	@include small {
-		padding: 125px 40px;
+		padding: 125px $mobile-padding;
+	}
+
+	@include xlarge {
+		padding: 500px 40px;
 	}
 
 	& .section__heading {
@@ -20,19 +20,24 @@
 		}
 	}
 
-	$negativeDistance: -100px;
+	$negativeDistance: -110px;
 	&:before,
 	&:after {
+		$w: 560px;
 		@extend .negativeSkew;
 		content: '';
 		position: absolute;
-		width: 620px;
+		width: 520px;
 		height: 400px;
 		transform-origin: top;
 		background-color: #fff;
 
 		@include small {
-			width: 300px;
+			width: $w / 2;
+		}
+
+		@include xlarge {
+			width: 900px;
 		}
 	}
 	&:before {
@@ -40,6 +45,10 @@
 		margin-bottom: $negativeDistance;
 		z-index: 1;
 		left: 0;
+
+		@include small {
+			margin-bottom: $negativeDistance / 2;
+		}
 
 		@include xlarge {
 			margin-bottom: $negativeDistance * 2;
@@ -51,6 +60,10 @@
 		top: 100%;
 		margin-top: $negativeDistance;
 		transform-origin: bottom;
+
+		@include small {
+			margin-top: $negativeDistance / 2;
+		}
 
 		@include xlarge {
 			margin-top: $negativeDistance * 2;
@@ -65,16 +78,28 @@
 		justify-items: center;
 		grid-template-columns: repeat(auto-fit, minmax(auto, 200px));
 
+		@include xlarge {
+			grid-template-columns: repeat(auto-fit, minmax(auto, 400px));
+		}
+
 		& > img {
-			margin: 16px;
+			margin: 0 16px;
 
 			&:last-of-type {
 				margin-right: 0;
+
+				@include small {
+					margin-right: 16px;
+				}
 			}
 
-			@include large {
-				height: auto;
-				width: 100%;
+			@include small {
+				margin-bottom: 32px;
+			}
+
+			@include xlarge {
+				margin: 0;
+				transform: scale(2);
 			}
 		}
 	}

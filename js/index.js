@@ -27,14 +27,14 @@ $(() => {
 
 	gsap.fromTo(
 		block1,
-		{ y: 0 },
+		{ y: -600 },
 		{
 			y: 2000,
 			duration: 1,
 			scrollTrigger: {
 				trigger: '.grid__block1',
 				start: 'top 40%',
-				end: '+=' + window.innerHeight * 4,
+				end: '+=' + window.innerHeight * 8,
 				scrub: 1,
 			},
 		},
@@ -42,7 +42,7 @@ $(() => {
 
 	gsap.fromTo(
 		block2,
-		{ y: -600 },
+		{ y: -1000 },
 		{
 			y: 4000,
 			duration: 1,
@@ -51,7 +51,7 @@ $(() => {
 			scrollTrigger: {
 				trigger: '.grid__block2',
 				start: 'top 10%',
-				end: '+=' + window.innerHeight * 6,
+				end: '+=' + window.innerHeight * 8,
 				scrub: 1,
 			},
 		},
@@ -65,8 +65,8 @@ $(() => {
 			duration: 1,
 			scrollTrigger: {
 				trigger: '.grid__block3',
-				start: 'top 20%',
-				end: '+=' + window.innerHeight * 16,
+				start: 'top 40%',
+				end: '+=' + window.innerHeight * 24,
 				scrub: 1,
 			},
 		},
@@ -87,15 +87,15 @@ $(() => {
 		},
 	);
 
-	// Header, hamburger, mouse
+	// Header, Hamburger, Mouse
 	const siteBar = $('.site-bar');
 	const body = $('body');
 
 	const hamburger = $('.site-bar__hamburger');
 	const headerFooterMouse = $('.header__footer-mouse');
 
-	const sideBarIn = 'side-bar--in';
-	const sideBarOut = 'side-bar--out';
+	const sideBarIn = 'mobile-menu--in';
+	const sideBarOut = 'mobile-menu--out';
 	const sideBarActive = 'site-bar--active';
 
 	$(window).scroll(() => {

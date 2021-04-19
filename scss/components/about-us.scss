@@ -5,19 +5,20 @@
 	justify-content: center;
 	width: 100vw;
 	grid-template-columns: minmax(auto, 960px);
-
 	padding-top: 210px;
 	padding-bottom: 210px;
+
+	@include small {
+		padding-left: $mobile-padding;
+		padding-right: $mobile-padding;
+		padding-bottom: 160px;
+	}
 
 	@include xlarge {
 		padding-top: 350px;
 		padding-bottom: 350px;
 	}
 
-	@include small {
-		padding-left: 40px;
-		padding-right: 40px;
-	}
 	&__container {
 		display: grid;
 	}
@@ -64,14 +65,25 @@
 	}
 
 	& > img {
+		$t: 64px;
+		$h: 400px;
 		position: absolute;
-		// height: 100%;
-		height: 500px;
-		top: 32px;
+		height: $h;
+		top: $t;
 		left: 0;
 
+		// Exceptions
+		@media (max-width: 1200px) {
+			height: 400px;
+		}
+
 		@include small {
+			display: block;
 			height: 25%;
+		}
+		@include xlarge {
+			top: $t * 2;
+			height: $h * 2;
 		}
 	}
 }

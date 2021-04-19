@@ -1,0 +1,32 @@
+.mobile-menu {
+	z-index: -1;
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	transform: translateX(100%);
+
+	background-color: rgba(0, 0, 0, 0.6);
+
+	transition: background-color 0.2s, transform 0.2s;
+
+	&--in {
+		overflow: hidden;
+
+		.mobile-menu {
+			z-index: 2;
+			visibility: visible;
+			transform: translateX(0);
+		}
+	}
+
+	&--out {
+		.mobile-menu {
+			z-index: 2;
+			visibility: visible;
+			transform: translateX(100%);
+		}
+	}
+}

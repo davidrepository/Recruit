@@ -4,7 +4,7 @@
 	}
 
 	50% {
-		transform: translateY(50%);
+		transform: translateY(40%);
 	}
 
 	100% {
@@ -15,21 +15,24 @@
 .header {
 	$pl: 195px;
 	$pr: 255px;
-	z-index: 1;
 	display: grid;
 	position: relative;
-	width: 100vw;
-	padding: 0 80px;
-	padding-left: $pl;
-	padding-right: $pr;
-
 	height: 100vh;
+	width: 100vw;
+	padding-left: 195px;
+	padding-right: 255px;
+	z-index: 1;
+
 	justify-content: center;
 	grid-template-columns: minmax(auto, 1800px);
 
 	@include small {
-		padding-left: 40px;
-		padding-right: 40px;
+		padding-left: $mobile-padding;
+		padding-right: $mobile-padding;
+	}
+
+	@include xlarge {
+		padding: 0;
 	}
 
 	// Background
@@ -52,28 +55,18 @@
 			width: 100%;
 			display: grid;
 			grid-auto-flow: column;
-			align-content: end;
+			align-content: center;
 			justify-content: space-between;
-			margin-bottom: 20%;
+			margin-top: 120px;
 			color: $white;
 			z-index: 1;
-
-			@include small {
-				padding: 0 40px;
-				margin-bottom: 30vh;
-			}
 
 			@include small {
 				margin-top: 0;
 				justify-content: center;
 
-				&-right {
-					display: none;
-				}
-
 				& .heading1 {
-					font-size: 36px;
-					line-height: 40px;
+					@include setFont(36px, 40px, 700);
 				}
 			}
 		}
@@ -99,14 +92,15 @@
 		}
 
 		&-line {
+			$h: 370px;
 			@extend .negativeSkew;
-			height: 370px;
+			height: $h;
 			width: 2px;
 			background-color: $white;
 			transform-origin: top;
 
 			@include xlarge {
-				height: 740px;
+				height: $h * 2;
 			}
 		}
 	}
@@ -133,7 +127,6 @@
 			ul {
 				display: grid;
 				grid-auto-flow: column;
-				// gap: 12px;
 
 				& li {
 					margin-right: 12px;
@@ -155,7 +148,7 @@
 
 		&-mouse {
 			justify-self: center;
-			animation: 3s mouseInfinite infinite ease-in-out;
+			animation: 2s mouseInfinite infinite ease-in-out;
 
 			& > img {
 				height: 100%;
@@ -174,7 +167,6 @@
 			justify-self: end;
 			position: relative;
 			display: grid;
-			// gap: 8px;
 			justify-items: center;
 			margin-right: 50px;
 
@@ -191,7 +183,7 @@
 				left: -60px;
 				width: 320px;
 				height: 320px;
-				background-color: #fff;
+				background-color: $white;
 				transform-origin: top;
 
 				@include small {

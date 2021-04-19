@@ -101,8 +101,13 @@
 
 .section-lead {
 	&__heading {
+		$mb: 48px;
 		display: grid;
-		margin-bottom: 48px;
+		margin-bottom: $mb;
+
+		@include xlarge {
+			margin-bottom: $mb * 2;
+		}
 
 		&--center {
 			justify-items: center;
@@ -116,12 +121,16 @@
 	}
 
 	&__text {
+		$mb: 32px;
 		display: grid;
-		margin-bottom: 32px;
+		margin-bottom: $mb;
+
+		@include xlarge {
+			margin-bottom: $mb * 2;
+		}
 
 		& > span {
 			@include setFont(15px, 18px, 400);
-			white-space: nowrap;
 			text-transform: uppercase;
 
 			@include xlarge {

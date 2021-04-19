@@ -9,24 +9,19 @@
 	grid-template-columns: minmax(auto, 1800px);
 	justify-content: center;
 
-	@include xlarge {
-		padding-left: 0;
-	}
-
 	@include small {
 		padding: 0;
 		padding-top: 80px;
 	}
 
-	&__container {
-		display: grid;
-		gap: 64px;
+	@include xlarge {
+		padding-left: 0;
 	}
 
 	&__info {
 		display: grid;
-		z-index: 1;
 		max-width: 380px;
+		z-index: 1;
 
 		@media (max-width: 1360px) {
 			max-width: 280px;
@@ -45,7 +40,7 @@
 			justify-items: center;
 			max-width: none;
 			width: 100%;
-			padding: 0 40px;
+			padding: 0 $mobile-padding;
 
 			& .section-lead {
 				&__heading {
@@ -134,21 +129,25 @@
 			transform: skew(-$skew) translateY(-50%);
 			background-color: $white;
 			position: absolute;
-			left: 40%;
+			left: 35%;
 			right: 0;
 			z-index: 2;
 			padding: 50px 100px;
 
 			@media (max-width: 1170px) {
 				left: 20%;
-				padding-right: 400px;
+			}
+
+			@include xlarge {
+				left: 40%;
+				padding: 70px 120px;
 			}
 
 			@include small {
-				padding: 40px 80px;
+				padding: 25px 50px;
 				right: 0;
-				left: 20%;
-				top: 100%;
+				left: 15%;
+				top: calc(100% + 15px);
 				transform-origin: top;
 				transform: skew(-$skew) translateY(-50%);
 			}
@@ -156,11 +155,15 @@
 			& > div {
 				display: grid;
 				white-space: nowrap;
-				max-width: 80%;
+				max-width: 260px;
 				transform: skew($skew);
 
 				@include small {
 					width: auto;
+				}
+
+				@include xlarge {
+					max-width: 70%;
 				}
 
 				& > h3 {
