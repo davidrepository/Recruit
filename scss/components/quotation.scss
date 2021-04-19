@@ -32,6 +32,8 @@
 
 		@include small {
 			left: 140px;
+			bottom: -120px;
+			height: 150px;
 		}
 
 		@include xlarge {

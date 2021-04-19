@@ -838,6 +838,8 @@ li:last-of-type .menu__link {
 @media (max-width: 1024px) {
   .quotation:before {
     left: 140px;
+    bottom: -120px;
+    height: 150px;
   }
 }
 @media (min-width: 2400px) {
